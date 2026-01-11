@@ -1,0 +1,226 @@
+[
+  {
+    "name": "landing_page",
+    "slug": "landing_page",
+    "route": "/",
+    "seo": {
+      "title": "369 Media House | Digital Solutions Hub",
+      "description": "Strategic social media, digital campaigns, and communication solutions that drive real impact."
+    },
+    "component_data": [
+      {
+        "key": "nav_bar",
+        "name": "navbar",
+        "is_contained": false,
+        "background": "surface",
+        "container": "mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8",
+        "props": {
+          "brandImage": "/images/logo.webp",
+          "brandText": "",
+          "navLinks": [
+            { "label": "Home", "link": "/", "type": "normal" },
+            { "label": "About", "link": "/about", "type": "normal" },
+            { "label": "Service", "link": "/service", "type": "normal" },
+            { "label": "Blog", "link": "/blog", "type": "normal" },
+            { "label": "Contact", "link": "/contact", "type": "normal" }
+          ]
+        }
+      },
+      {
+        "wrapper": "section",
+        "key": "hero_section",
+        "name": "list",
+        "variant": "staggered",
+        "is_contained": true,
+        "background": "page",
+        "container": "mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8",
+        "props": {
+          "heading": "",
+          "content": [
+            {
+              "key": "hero_1",
+              "title": "Digital Solutions Hub",
+              "image": "/images/hero.webp",
+              "description": "Social media is crowded, and standing out needs more than trends—it needs clarity. That’s where we come in. We plan, create, and execute campaigns that connect with real people and drive real business growth."
+            },
+            {
+              "key": "hero_2",
+              "chip": "About",
+              "image": "/images/about_home.webp",
+              "description": "369 Media House is a leading social media Team with a focus on helping political figures and organizations leverage digital platforms to win hearts and votes. With a team of 11 skilled professionals, we provide end-to-end services that include content creation, digital strategy, community engagement and crisis management. Our team is equipped to deliver high-impact social media campaigns for you looking to maximize their digital footprint and engage with the public ."
+            }
+          ]
+        }
+      },
+      {
+        "wrapper": "section",
+        "key": "services",
+        "name": "content_section",
+        "variant": "block",
+        "is_contained": true,
+        "background": "page",
+        "container": "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8",
+        "props": {
+          "chip": "Services",
+          "image": "/images/services_home.webp",
+          "image_alt": "Services",
+          "chip_data": [
+            { "id": "strategy-planning", "text": "Strategy & Planning" },
+            { "id": "content-creation", "text": "Content Creation" },
+            { "id": "paid-advertising", "text": "Paid Advertising" },
+            { "id": "influencer-marketing", "text": "Influencer Marketing" },
+            { "id": "analytics-reporting", "text": "Analytics & Reporting" },
+            { "id": "seo-integration", "text": "SEO Integration" },
+            { "id": "website-design", "text": "Website Design" },
+            { "id": "video-photography", "text": "Video Photography" },
+            { "id": "communication", "text": "Communication" },
+            { "id": "community-management", "text": "Community Management" }
+          ]
+        }
+      },
+      {
+        "wrapper": "section",
+        "key": "blogs",
+        "name": "list",
+        "variant": "card",
+        "is_contained": true,
+        "background": "page",
+        "container": "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8",
+        "props": {
+          "heading": "Blogs",
+          "content": [
+            {
+              "key": "interview",
+              "title": "Interview",
+              "image": "/images/blog1.webp",
+              "description": "Jordy shares his learnings and best practices for sports social media, based on his 7+ years of experience."
+            },
+            {
+              "key": "canva_alternative",
+              "title": "Canva alternative:",
+              "image": "/images/blog2.webp",
+              "description": "Which template-based content creation platform should you choose for your team? Compare Content"
+            },
+            {
+              "key": "transfermarkts",
+              "title": "Transfermarkt's",
+              "image": "/images/blog3.webp",
+              "description": "Discover how Transfermarkt unlocked new audiences and gained massive reach with the Club"
+            }
+          ]
+        }
+      },
+      {
+        "wrapper": "section",
+        "key": "contact_form",
+        "name": "form",
+        "variant": "stacked",
+        "is_contained": true,
+        "background": "card",
+        "container": "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8",
+        "props": {
+          "heading": "Contact",
+          "description": "",
+          "image": "/images/contact.webp",
+          "extra": [
+            {
+              "id": "extras_contact_1",
+              "label": "Phone",
+              "value": "+91-8017672648",
+              "type": "phone"
+            },
+            {
+              "id": "extras_contact_2",
+              "label": "Email",
+              "value": "sohamdas673@gmail.com",
+              "type": "mail"
+            }
+          ],
+          "fields": [
+            {
+              "type": "input",
+              "name": "name",
+              "label": "Your Name",
+              "required": true
+            },
+            {
+              "type": "input",
+              "name": "email",
+              "label": "Your Email ID",
+              "required": true
+            },
+            {
+              "type": "input",
+              "name": "phone",
+              "label": "Phone Number",
+              "required": true
+            },
+            {
+              "type": "input",
+              "name": "service",
+              "label": "Service",
+              "required": true
+            },
+            { "type": "textarea", "name": "message", "label": "Your Message" }
+          ],
+          "submit": { "path": "" }
+        }
+      },
+      {
+        "key": "site_footer",
+        "name": "footer",
+        "variant": "default",
+        "is_contained": false,
+        "background": "page",
+        "props": {
+          "social": [
+            {
+              "label": "Instagram",
+              "href": "https://instagram.com",
+              "icon": "instagram"
+            },
+            {
+              "label": "Facebook",
+              "href": "https://facebook.com",
+              "icon": "facebook"
+            },
+            {
+              "label": "Twitter",
+              "href": "https://twitter.com",
+              "icon": "twitter"
+            },
+            {
+              "label": "Email",
+              "href": "mailto:hello@cusub.com",
+              "icon": "mail"
+            }
+          ],
+          "copyright": "© 2026 369 Media House. All rights reserved."
+        }
+      }
+    ]
+  },
+  {
+    "name": "about_page",
+    "slug": "about",
+    "route": "/about",
+    "seo": {
+      "title": "About 369 Media House",
+      "description": "Learn about our mission, vision, and impact-driven digital storytelling."
+    },
+    "component_data": [
+      {
+        "wrapper": "section",
+        "key": "about_content",
+        "name": "content",
+        "is_contained": true,
+        "background": "page",
+        "container": "mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8",
+        "props": {
+          "heading": "About 369 Media House",
+          "description": "369 Media House is a dynamic media and communications firm dedicated to creating impactful social media campaigns and driving meaningful awareness across digital platforms. Founded with passion and purpose, our mission is to amplify voices, spark conversations, and connect communities through strategic storytelling and creative digital engagement."
+        }
+      }
+    ]
+  }
+]
