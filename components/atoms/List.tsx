@@ -15,6 +15,7 @@ interface ListProps {
         key: string;
         chip: string;
         image: string;
+        image_mobile_between?: string;
         description: string;
       }
   >;
@@ -36,16 +37,21 @@ const CardList: React.FC<Pick<ListProps, "heading" | "content">> = ({
           className="flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-bg-card)] transition-shadow hover:shadow-md p-8"
         >
           {/* Image */}
-          <div className="h-48 w-full overflow-hidden border-b border-b-2 pb-4">
+          {/* Image (desktop or normal mobile) */}
+          <div
+            className={`h-48 w-full overflow-hidden border-b border-b-2 pb-4 ${
+              "image_mobile_between" in item && item.image_mobile_between
+                ? "hidden md:block"
+                : ""
+            }`}
+          >
             <Image
               src={item.image}
               alt={item.key}
               className="h-full w-full object-cover"
               width={400}
               height={225}
-              style={{
-                mixBlendMode: "darken",
-              }}
+              style={{ mixBlendMode: "darken" }}
             />
           </div>
 
@@ -64,6 +70,18 @@ const CardList: React.FC<Pick<ListProps, "heading" | "content">> = ({
                     {item.chip}
                   </h3>
                 </div>
+              </div>
+            )}
+
+            {"image_mobile_between" in item && item.image_mobile_between && (
+              <div className="block md:hidden w-full overflow-hidden rounded-[var(--radius-lg)]">
+                <Image
+                  src={item.image_mobile_between}
+                  alt={`${item.key}-mobile`}
+                  className="w-full h-auto object-cover"
+                  width={400}
+                  height={225}
+                />
               </div>
             )}
 
@@ -101,7 +119,13 @@ const StaggeredList: React.FC<Pick<ListProps, "heading" | "content">> = ({
             }`}
           >
             {/* Image */}
-            <div className="overflow-hidden rounded-[var(--radius-lg)] bg-[var(--color-bg-surface)]">
+            <div
+              className={`overflow-hidden rounded-[var(--radius-lg)] bg-[var(--color-bg-surface)] ${
+                "image_mobile_between" in item && item.image_mobile_between
+                  ? "hidden md:block"
+                  : ""
+              }`}
+            >
               <Image
                 src={item.image}
                 alt={item.key}
@@ -126,6 +150,18 @@ const StaggeredList: React.FC<Pick<ListProps, "heading" | "content">> = ({
                       {item.chip}
                     </h3>
                   </div>
+                </div>
+              )}
+
+              {"image_mobile_between" in item && item.image_mobile_between && (
+                <div className="block md:hidden w-full overflow-hidden rounded-[var(--radius-lg)] my-6">
+                  <Image
+                    src={item.image_mobile_between}
+                    alt={`${item.key}-mobile`}
+                    className="w-full h-auto object-cover"
+                    width={600}
+                    height={400}
+                  />
                 </div>
               )}
 

@@ -47,6 +47,7 @@
               "key": "hero_2",
               "chip": "About",
               "image": "/images/about_home.webp",
+              "image_mobile_between": "/images/about_home.webp",
               "description": "369 Media House is a leading social media Team with a focus on helping political figures and organizations leverage digital platforms to win hearts and votes. With a team of 11 skilled professionals, we provide end-to-end services that include content creation, digital strategy, community engagement and crisis management. Our team is equipped to deliver high-impact social media campaigns for you looking to maximize their digital footprint and engage with the public ."
             }
           ]
@@ -196,29 +197,6 @@
             }
           ],
           "copyright": "© 2026 369 Media House. All rights reserved."
-        }
-      }
-    ]
-  },
-  {
-    "name": "about_page",
-    "slug": "about",
-    "route": "/about",
-    "seo": {
-      "title": "About 369 Media House",
-      "description": "Learn about our mission, vision, and impact-driven digital storytelling."
-    },
-    "component_data": [
-      {
-        "wrapper": "section",
-        "key": "about_content",
-        "name": "content",
-        "is_contained": true,
-        "background": "page",
-        "container": "mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8",
-        "props": {
-          "heading": "About 369 Media House",
-          "description": "369 Media House is a dynamic media and communications firm dedicated to creating impactful social media campaigns and driving meaningful awareness across digital platforms. Founded with passion and purpose, our mission is to amplify voices, spark conversations, and connect communities through strategic storytelling and creative digital engagement."
         }
       }
     ]
