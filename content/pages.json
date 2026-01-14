@@ -684,7 +684,7 @@
                 "layout": "vertical",
                 "mode": "spaced-around",
                 "background": "page",
-                "grid_span": 3,
+                "grid_span": 4,
                 "component_data": [
                   {
                     "key": "about_hero1_title_container",
@@ -776,7 +776,7 @@
                 "key": "about_hero1_image",
                 "name": "image",
                 "is_contained": false,
-                "grid_span": 2,
+                "grid_span": 1,
                 "props": {
                   "source": "/images/about_about.webp",
                   "alt": "369 media logo on a wallpaper",
