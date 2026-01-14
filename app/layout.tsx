@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { loadTheme, themeToCssVars } from "@/lib/theme";
 import { fontMap } from "@/lib/fontMap";
 

@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = ({ variant, social = [], copyright }) => {
   if (variant !== "default") return null;
 
   return (
-    <footer className="w-full border-t border-[var(--color-border)] bg-[var(--color-bg-page)]">
+    <footer className="w-full border-t border-[var(--color-border)] bg-[var(--color-bg-page)] mt-5">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 py-8 sm:flex-row sm:px-6 lg:px-8">
         {/* Social */}
         {social.length > 0 && (

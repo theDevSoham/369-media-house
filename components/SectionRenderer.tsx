@@ -1,9 +1,12 @@
 import React from "react";
 import ComponentRegistry from "./ComponentRegistry";
 import { Wrapper } from "@/schema/page.schema";
+import LayoutItem from "./atoms/LayoutItem";
+
+const container = "mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8";
 
 const backgroundClassMap: Record<
-  NonNullable<SectionRendererProps["nodes"][number]["background"]>,
+  NonNullable<SectionNode["background"]>,
   string
 > = {
   page: "bg-[var(--color-bg-page)] text-[var(--color-text-primary)]",
@@ -13,33 +16,49 @@ const backgroundClassMap: Record<
   secondary: "bg-[var(--color-secondary)] text-[var(--color-text-inverse)]",
 };
 
+type SectionNode = {
+  wrapper?: Wrapper;
+  key: string;
+  name: string;
+  variant?: string;
+  props?: any;
+  layout?: string;
+  mode?: string;
+  is_contained: boolean;
+  background?: "page" | "surface" | "card" | "primary" | "secondary";
+  grid_span: number;
+  component_data?: SectionNode[];
+};
+
 type SectionRendererProps = {
-  nodes: {
-    wrapper?: Wrapper;
-    key: string;
-    name: string;
-    variant?: string;
-    props?: any;
-    container?: string;
-    is_contained: boolean;
-    background?: "page" | "surface" | "card" | "primary" | "secondary";
-  }[];
+  nodes: SectionNode[];
 };
 
 const SectionRenderer: React.FC<SectionRendererProps> = ({ nodes }) => {
   return (
-    <React.Fragment>
-      {nodes.map((item) => (
-        <RenderSection
-          key={item.key}
-          wrapper={item.wrapper}
-          background={item.background}
-          container={item.is_contained ? item.container : undefined}
-        >
-          <ComponentRegistry component={item} />
-        </RenderSection>
-      ))}
-    </React.Fragment>
+    <>
+      {nodes.map((item) => {
+        const content = (
+          <RenderSection
+            wrapper={item.wrapper}
+            background={item.background}
+            container={item.is_contained ? container : undefined}
+          >
+            <ComponentRegistry component={item}>
+              {item.component_data && (
+                <SectionRenderer nodes={item.component_data} />
+              )}
+            </ComponentRegistry>
+          </RenderSection>
+        );
+
+        return (
+          <LayoutItem key={item.key} span={item.grid_span}>
+            {content}
+          </LayoutItem>
+        );
+      })}
+    </>
   );
 };
 
@@ -58,7 +77,6 @@ const RenderSection: React.FC<{
     ? backgroundClassMap[background]
     : undefined;
 
-  // No wrapper at all → just children
   if (WrapperTag === React.Fragment) {
     return <>{children}</>;
   }

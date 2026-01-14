@@ -13,7 +13,6 @@
         "name": "navbar",
         "is_contained": false,
         "background": "surface",
-        "container": "mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8",
         "props": {
           "brandImage": "/images/logo.webp",
           "brandText": "",
@@ -29,143 +28,942 @@
       {
         "wrapper": "section",
         "key": "hero_section",
-        "name": "list",
-        "variant": "staggered",
+        "name": "layout",
+        "layout": "vertical",
         "is_contained": true,
         "background": "page",
-        "container": "mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8",
-        "props": {
-          "heading": "",
-          "content": [
-            {
-              "key": "hero_1",
-              "title": "Digital Solutions Hub",
-              "image": "/images/hero.webp",
-              "description": "Social media is crowded, and standing out needs more than trends—it needs clarity. That’s where we come in. We plan, create, and execute campaigns that connect with real people and drive real business growth."
+        "props": {},
+        "component_data": [
+          {
+            "wrapper": "section",
+            "key": "hero_first",
+            "name": "layout",
+            "is_contained": false,
+            "layout": "horizontal",
+            "mode": "centered",
+            "background": "page",
+            "props": {
+              "totalColumns": 5
             },
-            {
-              "key": "hero_2",
-              "chip": "About",
-              "image": "/images/about_home.webp",
-              "image_mobile_between": "/images/about_home.webp",
-              "description": "369 Media House is a leading social media Team with a focus on helping political figures and organizations leverage digital platforms to win hearts and votes. With a team of 11 skilled professionals, we provide end-to-end services that include content creation, digital strategy, community engagement and crisis management. Our team is equipped to deliver high-impact social media campaigns for you looking to maximize their digital footprint and engage with the public ."
+            "component_data": [
+              {
+                "key": "hero1_image",
+                "name": "image",
+                "is_contained": false,
+                "grid_span": 2,
+                "props": {
+                  "source": "/images/hero.webp",
+                  "alt": "Girl sitting with a computer",
+                  "width": 500,
+                  "height": 500,
+                  "mode": "cover"
+                }
+              },
+              {
+                "key": "hero1_description",
+                "name": "layout",
+                "is_contained": false,
+                "layout": "vertical",
+                "mode": "centered",
+                "background": "page",
+                "grid_span": 3,
+                "component_data": [
+                  {
+                    "key": "hero1_title",
+                    "name": "typography",
+                    "is_contained": false,
+                    "props": {
+                      "mode": "h1",
+                      "text": "Digital Solutions Hub"
+                    }
+                  },
+                  {
+                    "key": "hero1_subtitle",
+                    "name": "typography",
+                    "is_contained": false,
+                    "props": {
+                      "mode": "h4",
+                      "text": "Social media is crowded, and standing out needs more than trends—it needs clarity. That’s where we come in. We plan, create, and execute campaigns that connect with real people and drive real business growth."
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "wrapper": "section",
+            "key": "hero_second",
+            "name": "layout",
+            "is_contained": false,
+            "layout": "horizontal",
+            "mode": "centered",
+            "background": "page",
+            "props": {
+              "totalColumns": 5
+            },
+            "component_data": [
+              {
+                "key": "hero2_description",
+                "name": "layout",
+                "is_contained": false,
+                "layout": "vertical",
+                "mode": "spaced-around",
+                "background": "page",
+                "grid_span": 3,
+                "component_data": [
+                  {
+                    "key": "hero2_title_container",
+                    "name": "layout",
+                    "is_contained": false,
+                    "background": "page",
+                    "props": {
+                      "totalColumns": 6
+                    },
+                    "component_data": [
+                      {
+                        "key": "hero2_chip",
+                        "name": "chip",
+                        "is_contained": false,
+                        "grid_span": 5,
+                        "props": {
+                          "variant": "section-label",
+                          "text": "About",
+                          "background": "surface"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "key": "hero2_subtitle",
+                    "name": "typography",
+                    "is_contained": false,
+                    "props": {
+                      "mode": "h4",
+                      "text": "369 Media House is a leading social media Team with a focus on helping political figures and organizations leverage digital platforms to win hearts and votes. With a team of 11 skilled professionals, we provide end-to-end services that include content creation, digital strategy, community engagement and crisis management. Our team is equipped to deliver high-impact social media campaigns for you looking to maximize their digital footprint and engage with the public."
+                    }
+                  }
+                ]
+              },
+              {
+                "key": "hero2_image",
+                "name": "image",
+                "is_contained": false,
+                "grid_span": 2,
+                "props": {
+                  "source": "/images/about_home.webp",
+                  "alt": "369 media logo on a wallpaper",
+                  "width": 500,
+                  "height": 500,
+                  "mode": "cover"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "wrapper": "section",
+        "key": "service",
+        "name": "layout",
+        "layout": "vertical",
+        "is_contained": true,
+        "background": "page",
+        "props": {
+          "totalColumns": 1,
+          "paddingY": "lg"
+        },
+        "component_data": [
+          {
+            "key": "service-chip-container",
+            "name": "layout",
+            "is_contained": false,
+            "background": "page",
+            "props": {
+              "totalColumns": 2
+            },
+            "grid_span": 1,
+            "component_data": [
+              {
+                "key": "service-chip",
+                "name": "chip",
+                "is_contained": false,
+                "grid_span": 1,
+                "props": {
+                  "variant": "section-label",
+                  "text": "Service",
+                  "background": "surface"
+                }
+              }
+            ]
+          },
+          {
+            "key": "service_image",
+            "name": "image",
+            "is_contained": false,
+            "grid_span": 1,
+            "props": {
+              "source": "/images/services_home.webp",
+              "alt": "369 media logo on a wallpaper",
+              "width": 500,
+              "height": 500,
+              "mode": "cover",
+              "edges": "squared"
             }
-          ]
-        }
-      },
-      {
-        "wrapper": "section",
-        "key": "services",
-        "name": "content_section",
-        "variant": "block",
-        "is_contained": true,
-        "background": "page",
-        "container": "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8",
-        "props": {
-          "chip": "Services",
-          "image": "/images/services_home.webp",
-          "image_alt": "Services",
-          "chip_data": [
-            { "id": "strategy-planning", "text": "Strategy & Planning" },
-            { "id": "content-creation", "text": "Content Creation" },
-            { "id": "paid-advertising", "text": "Paid Advertising" },
-            { "id": "influencer-marketing", "text": "Influencer Marketing" },
-            { "id": "analytics-reporting", "text": "Analytics & Reporting" },
-            { "id": "seo-integration", "text": "SEO Integration" },
-            { "id": "website-design", "text": "Website Design" },
-            { "id": "video-photography", "text": "Video Photography" },
-            { "id": "communication", "text": "Communication" },
-            { "id": "community-management", "text": "Community Management" }
-          ]
-        }
-      },
-      {
-        "wrapper": "section",
-        "key": "blogs",
-        "name": "list",
-        "variant": "card",
-        "is_contained": true,
-        "background": "page",
-        "container": "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8",
-        "props": {
-          "heading": "Blogs",
-          "content": [
-            {
-              "key": "interview",
-              "title": "Interview",
-              "image": "/images/blog1.webp",
-              "description": "Jordy shares his learnings and best practices for sports social media, based on his 7+ years of experience."
-            },
-            {
-              "key": "canva_alternative",
-              "title": "Canva alternative:",
-              "image": "/images/blog2.webp",
-              "description": "Which template-based content creation platform should you choose for your team? Compare Content"
-            },
-            {
-              "key": "transfermarkts",
-              "title": "Transfermarkt's",
-              "image": "/images/blog3.webp",
-              "description": "Discover how Transfermarkt unlocked new audiences and gained massive reach with the Club"
+          },
+          {
+            "key": "service-chips-list",
+            "name": "list",
+            "props": {
+              "layout": "horizontal",
+              "wrap": true,
+              "align": "center",
+              "containerClass": "px-2 lg:px-4",
+              "items": [
+                {
+                  "key": "services-chip_1",
+                  "name": "chip",
+                  "props": {
+                    "variant": "tag",
+                    "text": "Strategy & Planning",
+                    "background": "page"
+                  }
+                },
+                {
+                  "key": "services-chip_2",
+                  "name": "chip",
+                  "props": {
+                    "variant": "tag",
+                    "text": "Content Creation",
+                    "background": "page"
+                  }
+                },
+                {
+                  "key": "services-chip_3",
+                  "name": "chip",
+                  "props": {
+                    "variant": "tag",
+                    "text": "Paid Advertising",
+                    "background": "page"
+                  }
+                },
+                {
+                  "key": "services-chip_4",
+                  "name": "chip",
+                  "props": {
+                    "variant": "tag",
+                    "text": "Influencer Marketing",
+                    "background": "page"
+                  }
+                },
+                {
+                  "key": "services-chip_5",
+                  "name": "chip",
+                  "props": {
+                    "variant": "tag",
+                    "text": "Analytics & Reporting",
+                    "background": "page"
+                  }
+                },
+                {
+                  "key": "services-chip_6",
+                  "name": "chip",
+                  "props": {
+                    "variant": "tag",
+                    "text": "SEO Integration",
+                    "background": "page"
+                  }
+                },
+                {
+                  "key": "services-chip_7",
+                  "name": "chip",
+                  "props": {
+                    "variant": "tag",
+                    "text": "Website Design",
+                    "background": "page"
+                  }
+                },
+                {
+                  "key": "services-chip_8",
+                  "name": "chip",
+                  "props": {
+                    "variant": "tag",
+                    "text": "Video Photography",
+                    "background": "page"
+                  }
+                },
+                {
+                  "key": "services-chip_9",
+                  "name": "chip",
+                  "props": {
+                    "variant": "tag",
+                    "text": "Communication",
+                    "background": "page"
+                  }
+                },
+                {
+                  "key": "services-chip_10",
+                  "name": "chip",
+                  "props": {
+                    "variant": "tag",
+                    "text": "Community Management",
+                    "background": "page"
+                  }
+                }
+              ]
             }
-          ]
-        }
+          }
+        ]
       },
       {
         "wrapper": "section",
-        "key": "contact_form",
-        "name": "form",
-        "variant": "stacked",
+        "key": "blog_home_page",
+        "name": "layout",
+        "layout": "vertical",
         "is_contained": true,
-        "background": "card",
-        "container": "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8",
+        "background": "page",
         "props": {
-          "heading": "Contact",
-          "description": "",
-          "image": "/images/contact.webp",
-          "extra": [
+          "totalColumns": 1,
+          "paddingY": "lg"
+        },
+        "component_data": [
+          {
+            "key": "blog-chip-container",
+            "name": "layout",
+            "is_contained": false,
+            "background": "page",
+            "props": {
+              "totalColumns": 2,
+              "mode": "centered"
+            },
+            "grid_span": 1,
+            "component_data": [
+              {
+                "key": "blog-chip",
+                "name": "chip",
+                "is_contained": false,
+                "grid_span": 1,
+                "props": {
+                  "variant": "section-label",
+                  "text": "Blog",
+                  "background": "surface"
+                }
+              }
+            ]
+          },
+          {
+            "key": "blog-cards-container",
+            "name": "layout",
+            "layout": "horizontal",
+            "is_contained": false,
+            "grid_span": 1,
+            "props": {
+              "totalColumns": 3,
+              "gap": "gap-8"
+            },
+            "component_data": [
+              {
+                "key": "blog-card-1",
+                "name": "card",
+                "grid_span": 1,
+                "variant": "preview",
+                "props": {
+                  "title": "Interview",
+                  "description": "Jordy shares his learnings and best practices for sports social media, based on his 7+ years of experience.",
+                  "image": {
+                    "src": "/images/blog1.webp",
+                    "alt": "Interview illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+              {
+                "key": "blog-card-2",
+                "name": "card",
+                "grid_span": 1,
+                "variant": "preview",
+                "props": {
+                  "title": "Canva alternative:",
+                  "description": "Which template-based content creation platform should you choose for your team? Compare Content.",
+                  "image": {
+                    "src": "/images/blog2.webp",
+                    "alt": "Content creation illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+              {
+                "key": "blog-card-3",
+                "name": "card",
+                "grid_span": 1,
+                "variant": "preview",
+                "props": {
+                  "title": "Transfermarkt's",
+                  "description": "Discover how Transfermarkt unlocked new audiences and gained massive reach with the Club.",
+                  "image": {
+                    "src": "/images/blog3.webp",
+                    "alt": "Analytics illustration",
+                    "ratio": "square"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "wrapper": "section",
+        "key": "contact_home_page",
+        "name": "layout",
+        "layout": "vertical",
+        "is_contained": true,
+        "background": "page",
+        "props": {
+          "totalColumns": 1,
+          "paddingY": "lg"
+        },
+        "component_data": [
+          {
+            "key": "contact-chip-container",
+            "name": "layout",
+            "is_contained": false,
+            "background": "page",
+            "props": {
+              "totalColumns": 2,
+              "mode": "centered"
+            },
+            "grid_span": 1,
+            "component_data": [
+              {
+                "key": "contact-chip",
+                "name": "chip",
+                "is_contained": false,
+                "grid_span": 1,
+                "props": {
+                  "variant": "section-label",
+                  "text": "Contact",
+                  "background": "surface"
+                }
+              }
+            ]
+          },
+          {
+            "key": "contact-body-layout",
+            "name": "layout",
+            "is_contained": false,
+            "background": "page",
+            "layout": "horizontal",
+            "grid_span": 1,
+            "props": {
+              "totalColumns": 3,
+              "mode": "items-center-y"
+            },
+            "component_data": [
+              {
+                "key": "contact-left-container",
+                "name": "layout",
+                "layout": "vertical",
+                "grid_span": 2,
+                "props": {
+                  "totalColumns": 1,
+                  "gap": "gap-4"
+                },
+                "component_data": [
+                  {
+                    "key": "contact-left-container-image",
+                    "name": "image",
+                    "is_contained": false,
+                    "grid_span": 1,
+                    "props": {
+                      "source": "/images/contact.webp",
+                      "alt": "Contact image",
+                      "width": 500,
+                      "height": 500,
+                      "mode": "cover"
+                    }
+                  },
+                  {
+                    "key": "contact-links",
+                    "name": "layout",
+                    "layout": "vertical",
+                    "grid_span": 1,
+                    "props": {
+                      "gap": "gap-4"
+                    },
+                    "component_data": [
+                      {
+                        "key": "contact-phone",
+                        "name": "link",
+                        "props": {
+                          "variant": "contact-phone",
+                          "type": "normal",
+                          "label": "Phone: +91 98765 43210",
+                          "value": "+919876543210"
+                        }
+                      },
+                      {
+                        "key": "contact-email",
+                        "name": "link",
+                        "props": {
+                          "variant": "contact-email",
+                          "type": "normal",
+                          "label": "Email: hello@369mediahouse.com",
+                          "value": "hello@369mediahouse.com"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "key": "contact-right-container",
+                "name": "layout",
+                "layout": "vertical",
+                "is_contained": false,
+                "background": "page",
+                "props": {
+                  "paddingY": "md"
+                },
+                "component_data": [
+                  {
+                    "key": "contact-form",
+                    "name": "form",
+                    "variant": "stacked",
+                    "props": {
+                      "submitLabel": "Send Message",
+                      "submitAction": "/api/contact",
+                      "method": "POST",
+                      "clearFormAfterSubmit": true,
+                      "fields": [
+                        {
+                          "key": "name",
+                          "name": "input",
+                          "props": {
+                            "name": "name",
+                            "label": "Full Name",
+                            "placeholder": "John Doe",
+                            "required": true
+                          }
+                        },
+                        {
+                          "key": "email",
+                          "name": "input",
+                          "props": {
+                            "name": "email",
+                            "type": "email",
+                            "label": "Email",
+                            "required": true
+                          }
+                        },
+                        {
+                          "key": "phone-number",
+                          "name": "input",
+                          "props": {
+                            "name": "phone",
+                            "label": "Phone number",
+                            "type": "number",
+                            "placeholder": "+91XXXXXXXXXX",
+                            "required": true
+                          }
+                        },
+                        {
+                          "key": "service",
+                          "name": "input",
+                          "props": {
+                            "name": "service",
+                            "label": "Service",
+                            "placeholder": "Strategy and Planning",
+                            "required": true
+                          }
+                        },
+                        {
+                          "key": "message",
+                          "name": "textarea",
+                          "props": {
+                            "name": "message",
+                            "label": "Message",
+                            "rows": 5
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "site_footer",
+        "name": "footer",
+        "variant": "default",
+        "is_contained": false,
+        "background": "page",
+        "props": {
+          "social": [
             {
-              "id": "extras_contact_1",
-              "label": "Phone",
-              "value": "+91-8017672648",
-              "type": "phone"
+              "label": "Instagram",
+              "href": "https://instagram.com",
+              "icon": "instagram"
             },
             {
-              "id": "extras_contact_2",
+              "label": "Facebook",
+              "href": "https://facebook.com",
+              "icon": "facebook"
+            },
+            {
+              "label": "Twitter",
+              "href": "https://twitter.com",
+              "icon": "twitter"
+            },
+            {
               "label": "Email",
-              "value": "sohamdas673@gmail.com",
-              "type": "mail"
+              "href": "mailto:hello@cusub.com",
+              "icon": "mail"
             }
           ],
-          "fields": [
-            {
-              "type": "input",
-              "name": "name",
-              "label": "Your Name",
-              "required": true
-            },
-            {
-              "type": "input",
-              "name": "email",
-              "label": "Your Email ID",
-              "required": true
-            },
-            {
-              "type": "input",
-              "name": "phone",
-              "label": "Phone Number",
-              "required": true
-            },
-            {
-              "type": "input",
-              "name": "service",
-              "label": "Service",
-              "required": true
-            },
-            { "type": "textarea", "name": "message", "label": "Your Message" }
-          ],
-          "submit": { "path": "" }
+          "copyright": "© 2026 369 Media House. All rights reserved."
         }
+      }
+    ]
+  },
+  {
+    "name": "about",
+    "slug": "about",
+    "route": "/about",
+    "seo": {
+      "title": "About 369 Media House | Digital Solutions Hub",
+      "description": "About Strategic social media, digital campaigns, and communication solutions that drive real impact."
+    },
+    "component_data": [
+      {
+        "key": "nav_bar",
+        "name": "navbar",
+        "is_contained": false,
+        "background": "surface",
+        "props": {
+          "brandImage": "/images/logo.webp",
+          "brandText": "",
+          "navLinks": [
+            { "label": "Home", "link": "/", "type": "normal" },
+            { "label": "About", "link": "/about", "type": "normal" },
+            { "label": "Service", "link": "/service", "type": "normal" },
+            { "label": "Blog", "link": "/blog", "type": "normal" },
+            { "label": "Contact", "link": "/contact", "type": "normal" }
+          ]
+        }
+      },
+      {
+        "wrapper": "section",
+        "key": "about-us-section",
+        "name": "layout",
+        "layout": "vertical",
+        "is_contained": true,
+        "background": "page",
+        "props": {
+          "totalColumns": 3
+        },
+        "component_data": [
+          {
+            "wrapper": "section",
+            "key": "about_hero_first",
+            "name": "layout",
+            "is_contained": true,
+            "layout": "horizontal",
+            "mode": "centered",
+            "background": "page",
+            "props": {
+              "totalColumns": 5,
+              "mobileOrder": "reverse"
+            },
+            "component_data": [
+              {
+                "key": "about_hero1_description",
+                "name": "layout",
+                "is_contained": false,
+                "layout": "vertical",
+                "mode": "spaced-around",
+                "background": "page",
+                "grid_span": 3,
+                "component_data": [
+                  {
+                    "key": "about_hero1_title_container",
+                    "name": "layout",
+                    "is_contained": false,
+                    "background": "page",
+                    "props": {
+                      "totalColumns": 1
+                    },
+                    "component_data": [
+                      {
+                        "key": "about_hero1_text",
+                        "name": "typography",
+                        "is_contained": false,
+                        "props": {
+                          "mode": "h2",
+                          "text": "About 369 Media House",
+                          "align": "left"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "key": "about_hero1_subtitle_container_1",
+                    "name": "layout",
+                    "is_contained": false,
+                    "background": "page",
+                    "props": {
+                      "totalColumns": 1
+                    },
+                    "component_data": [
+                      {
+                        "key": "about_hero1_subtitle_1",
+                        "name": "typography",
+                        "is_contained": false,
+                        "props": {
+                          "mode": "h4",
+                          "text": "369 Media House is a dynamic media and communications firm dedicated to creating impactful social media campaigns and driving meaningful awareness across digital platforms. Founded with passion and purpose by a young woman leader, our mission is to amplify voices, spark conversations, and connect communities through strategic storytelling and creative digital engagement.",
+                          "align": "left"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "key": "about_hero1_subtitle_container_2",
+                    "name": "layout",
+                    "is_contained": false,
+                    "background": "page",
+                    "props": {
+                      "totalColumns": 1
+                    },
+                    "component_data": [
+                      {
+                        "key": "about_hero1_subtitle_2",
+                        "name": "typography",
+                        "is_contained": false,
+                        "props": {
+                          "mode": "h4",
+                          "text": "At 369 Media House, we combine data-driven insights with innovative content to help causes, organizations, and initiatives achieve visibility and drive positive social impact. With expertise in campaign strategy, content creation, and audience engagement, we empower brands and movements to communicate with clarity, confidence, and purpose.",
+                          "align": "left"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "key": "about_hero1_subtitle_container_3",
+                    "name": "layout",
+                    "is_contained": false,
+                    "background": "page",
+                    "props": {
+                      "totalColumns": 1
+                    },
+                    "component_data": [
+                      {
+                        "key": "about_hero1_subtitle_3",
+                        "name": "typography",
+                        "is_contained": false,
+                        "props": {
+                          "mode": "h4",
+                          "text": "We believe in the power of digital media to inform, inspire, and transform — and we are committed to using that power responsibly to support awareness, advocacy, and equitable representation in the online world.",
+                          "align": "left"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "key": "about_hero1_image",
+                "name": "image",
+                "is_contained": false,
+                "grid_span": 2,
+                "props": {
+                  "source": "/images/about_about.webp",
+                  "alt": "369 media logo on a wallpaper",
+                  "width": 500,
+                  "height": 500,
+                  "mode": "cover"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "wrapper": "section",
+        "key": "client-wall",
+        "name": "layout",
+        "layout": "vertical",
+        "is_contained": true,
+        "props": {
+          "totalColumns": 1,
+          "paddingY": "xl"
+        },
+        "component_data": [
+          {
+            "key": "client-wall-title-container",
+            "name": "layout",
+            "is_contained": true,
+            "background": "page",
+            "props": {
+              "totalColumns": 1
+            },
+            "component_data": [
+              {
+                "key": "client-wall-title",
+                "name": "typography",
+                "is_contained": false,
+                "props": {
+                  "mode": "h3",
+                  "text": "Client Wall",
+                  "align": "center"
+                }
+              }
+            ]
+          },
+          {
+            "key": "client-wall-cards-container",
+            "name": "layout",
+            "layout": "horizontal",
+            "is_contained": true,
+            "grid_span": 1,
+            "props": {
+              "totalColumns": 3,
+              "gap": "gap-8"
+            },
+            "component_data": [
+              {
+                "key": "client-wall-card-1",
+                "name": "card",
+                "grid_span": 1,
+                "variant": "testimonial",
+                "props": {
+                  "description": "369 Media House understood our political messaging and audience perfectly. Their content strategy and rapid response during critical moments helped us stay connected with voters throughout the campaign.",
+                  "testimonial": {
+                    "author": "Campaign Coordinator",
+                    "role": "Political Campaign",
+                    "avatar": "/images/avatar-placeholder.webp"
+                  }
+                }
+              },
+              {
+                "key": "client-wall-card-2",
+                "name": "card",
+                "grid_span": 1,
+                "variant": "testimonial",
+                "props": {
+                  "description": "The team is strategic, disciplined, and quick. From content creation to community engagement, they handled our social media professionally and with clarity.",
+                  "testimonial": {
+                    "author": "Public Representative",
+                    "role": "Government Office",
+                    "avatar": "/images/avatar-placeholder.webp"
+                  }
+                }
+              },
+              {
+                "key": "client-wall-card-3",
+                "name": "card",
+                "grid_span": 1,
+                "variant": "testimonial",
+                "props": {
+                  "description": "They don’t just post content — they think deeply about narrative and impact. Their digital planning and crisis management support made a visible difference.",
+                  "testimonial": {
+                    "author": "Party Media Head",
+                    "role": "Political Organization",
+                    "avatar": "/images/avatar-placeholder.webp"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "wrapper": "section",
+        "key": "client-capsules",
+        "name": "layout",
+        "layout": "vertical",
+        "is_contained": true,
+        "props": {
+          "totalColumns": 1,
+          "paddingY": "md"
+        },
+        "component_data": [
+          {
+            "key": "client-capsules-title-container",
+            "name": "layout",
+            "is_contained": true,
+            "background": "page",
+            "props": {
+              "totalColumns": 1
+            },
+            "component_data": [
+              {
+                "key": "client-capsules-title",
+                "name": "typography",
+                "is_contained": false,
+                "props": {
+                  "mode": "h3",
+                  "text": "Clients We've Worked With",
+                  "align": "center"
+                }
+              }
+            ]
+          },
+          {
+            "key": "client-capsules-container",
+            "name": "layout",
+            "is_contained": false,
+            "background": "page",
+            "props": {
+              "totalColumns": 3
+            },
+            "component_data": [
+              {
+                "key": "client-logo-1",
+                "name": "capsule",
+                "variant": "image-capsule",
+                "props": {
+                  "image": {
+                    "src": "/images/cusub.webp",
+                    "alt": "CUSUB logo"
+                  },
+                  "size": "lg",
+                  "border": true,
+                  "background": "transparent"
+                }
+              },
+              {
+                "key": "client-logo-2",
+                "name": "capsule",
+                "variant": "image-capsule",
+                "props": {
+                  "image": {
+                    "src": "/images/cusub.webp",
+                    "alt": "CUSUB logo"
+                  },
+                  "size": "lg",
+                  "border": true,
+                  "background": "transparent"
+                }
+              },
+              {
+                "key": "client-logo-3",
+                "name": "capsule",
+                "variant": "image-capsule",
+                "props": {
+                  "image": {
+                    "src": "/images/cusub.webp",
+                    "alt": "CUSUB logo"
+                  },
+                  "size": "lg",
+                  "border": true,
+                  "background": "transparent"
+                }
+              }
+            ]
+          }
+        ]
       },
       {
         "key": "site_footer",
