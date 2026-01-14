@@ -21,7 +21,7 @@
             { "label": "About", "link": "/about", "type": "normal" },
             { "label": "Service", "link": "/service", "type": "normal" },
             { "label": "Blog", "link": "/blog", "type": "normal" },
-            { "label": "Contact", "link": "/contact", "type": "normal" }
+            { "label": "Contact", "link": "/#contact", "type": "normal" }
           ]
         }
       },
@@ -412,6 +412,7 @@
       },
       {
         "wrapper": "section",
+        "id": "contact",
         "key": "contact_home_page",
         "name": "layout",
         "layout": "vertical",
@@ -649,7 +650,7 @@
             { "label": "About", "link": "/about", "type": "normal" },
             { "label": "Service", "link": "/service", "type": "normal" },
             { "label": "Blog", "link": "/blog", "type": "normal" },
-            { "label": "Contact", "link": "/contact", "type": "normal" }
+            { "label": "Contact", "link": "/#contact", "type": "normal" }
           ]
         }
       },
@@ -991,6 +992,224 @@
             {
               "label": "Email",
               "href": "mailto:hello@cusub.com",
+              "icon": "mail"
+            }
+          ],
+          "copyright": "© 2026 369 Media House. All rights reserved."
+        }
+      }
+    ]
+  },
+  {
+    "name": "service",
+    "slug": "service",
+    "route": "/service",
+    "seo": {
+      "title": "Services | 369 Media House",
+      "description": "Strategy, content, advertising, analytics, and digital communication services by 369 Media House."
+    },
+    "component_data": [
+      {
+        "key": "nav_bar",
+        "name": "navbar",
+        "is_contained": false,
+        "background": "surface",
+        "props": {
+          "brandImage": "/images/logo.webp",
+          "brandText": "",
+          "navLinks": [
+            { "label": "Home", "link": "/", "type": "normal" },
+            { "label": "About", "link": "/about", "type": "normal" },
+            { "label": "Service", "link": "/service", "type": "normal" },
+            { "label": "Blog", "link": "/blog", "type": "normal" },
+            { "label": "Contact", "link": "/#contact", "type": "normal" }
+          ]
+        }
+      },
+      {
+        "wrapper": "section",
+        "key": "service-page",
+        "name": "layout",
+        "layout": "vertical",
+        "is_contained": true,
+        "background": "page",
+        "props": {
+          "totalColumns": 1,
+          "paddingY": "xl"
+        },
+        "component_data": [
+          {
+            "key": "service-title",
+            "name": "typography",
+            "props": {
+              "mode": "h2",
+              "text": "Our Services",
+              "align": "center"
+            }
+          },
+
+          {
+            "key": "service-cards-grid",
+            "name": "layout",
+            "layout": "horizontal",
+            "is_contained": false,
+            "props": {
+              "totalColumns": 4,
+              "gap": "gap-8"
+            },
+            "component_data": [
+              {
+                "key": "service-card-1",
+                "name": "card",
+                "variant": "preview",
+                "grid_span": 1,
+                "props": {
+                  "title": "Strategy & Planning",
+                  "description": "Audience research, goal setting, content calendars.",
+                  "image": {
+                    "src": "/images/services/strategy.webp",
+                    "alt": "Strategy illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+              {
+                "key": "service-card-2",
+                "name": "card",
+                "variant": "preview",
+                "grid_span": 1,
+                "props": {
+                  "title": "Content Creation",
+                  "description": "Graphics, short & long videos, copywriting.",
+                  "image": {
+                    "src": "/images/services/content.webp",
+                    "alt": "Content creation illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+              {
+                "key": "service-card-3",
+                "name": "card",
+                "variant": "preview",
+                "grid_span": 1,
+                "props": {
+                  "title": "Paid Advertising",
+                  "description": "Campaign setup, targeting, bidding, A/B testing (Meta & Google Ads).",
+                  "image": {
+                    "src": "/images/services/ads.webp",
+                    "alt": "Paid advertising illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+              {
+                "key": "service-card-4",
+                "name": "card",
+                "variant": "preview",
+                "grid_span": 1,
+                "props": {
+                  "title": "Community Management",
+                  "description": "Engagement, responses, loyalty building.",
+                  "image": {
+                    "src": "/images/services/community.webp",
+                    "alt": "Community management illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+
+              {
+                "key": "service-card-5",
+                "name": "card",
+                "variant": "preview",
+                "grid_span": 1,
+                "props": {
+                  "title": "Influencer Marketing",
+                  "description": "Collaborating with creators to reach audiences.",
+                  "image": {
+                    "src": "/images/services/influencer.webp",
+                    "alt": "Influencer marketing illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+              {
+                "key": "service-card-6",
+                "name": "card",
+                "variant": "preview",
+                "grid_span": 1,
+                "props": {
+                  "title": "Analytics & Reporting",
+                  "description": "Performance tracking, data-driven insights, ROI measurement.",
+                  "image": {
+                    "src": "/images/services/analytics.webp",
+                    "alt": "Analytics illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+              {
+                "key": "service-card-7",
+                "name": "card",
+                "variant": "preview",
+                "grid_span": 1,
+                "props": {
+                  "title": "SEO Integration",
+                  "description": "Optimizing content for search visibility.",
+                  "image": {
+                    "src": "/images/services/seo.webp",
+                    "alt": "SEO illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+              {
+                "key": "service-card-8",
+                "name": "card",
+                "variant": "preview",
+                "grid_span": 1,
+                "props": {
+                  "title": "Video Photography",
+                  "description": "High-quality video production & photography services.",
+                  "image": {
+                    "src": "/images/services/video.webp",
+                    "alt": "Video production illustration",
+                    "ratio": "square"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "key": "site_footer",
+        "name": "footer",
+        "variant": "default",
+        "is_contained": false,
+        "background": "page",
+        "props": {
+          "social": [
+            {
+              "label": "Instagram",
+              "href": "https://instagram.com",
+              "icon": "instagram"
+            },
+            {
+              "label": "Facebook",
+              "href": "https://facebook.com",
+              "icon": "facebook"
+            },
+            {
+              "label": "Twitter",
+              "href": "https://twitter.com",
+              "icon": "twitter"
+            },
+            {
+              "label": "Email",
+              "href": "mailto:hello@369mediahouse.com",
               "icon": "mail"
             }
           ],

@@ -10,6 +10,8 @@ export const ComponentSchema: z.ZodType<any> = z.lazy(() =>
 
     wrapper: z.enum(["section", "article", "div"]).optional(),
 
+    id: z.string().optional(),
+
     variant: z.string().optional(),
 
     layout: z.string().optional(), // horizontal / vertical

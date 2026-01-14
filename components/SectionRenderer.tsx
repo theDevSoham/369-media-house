@@ -18,6 +18,7 @@ const backgroundClassMap: Record<
 
 type SectionNode = {
   wrapper?: Wrapper;
+  id?: string;
   key: string;
   name: string;
   variant?: string;
@@ -40,6 +41,7 @@ const SectionRenderer: React.FC<SectionRendererProps> = ({ nodes }) => {
       {nodes.map((item) => {
         const content = (
           <RenderSection
+            id={item.id}
             wrapper={item.wrapper}
             background={item.background}
             container={item.is_contained ? container : undefined}
@@ -63,11 +65,13 @@ const SectionRenderer: React.FC<SectionRendererProps> = ({ nodes }) => {
 };
 
 const RenderSection: React.FC<{
+  id?: string; // 👈 NEW
   wrapper?: Wrapper;
   background?: "page" | "surface" | "card" | "primary" | "secondary";
   container?: string;
   children: React.ReactNode;
 }> = ({
+  id,
   wrapper: WrapperTag = React.Fragment,
   background,
   container,
@@ -77,12 +81,22 @@ const RenderSection: React.FC<{
     ? backgroundClassMap[background]
     : undefined;
 
+  // ❗ Fragment cannot receive props like id
   if (WrapperTag === React.Fragment) {
+    // If id is present, wrap in a div
+    if (id) {
+      return (
+        <div id={id} className={backgroundClass}>
+          {container ? <div className={container}>{children}</div> : children}
+        </div>
+      );
+    }
+
     return <>{children}</>;
   }
 
   return (
-    <WrapperTag className={backgroundClass}>
+    <WrapperTag id={id} className={backgroundClass}>
       {container ? <div className={container}>{children}</div> : children}
     </WrapperTag>
   );

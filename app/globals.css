@@ -37,7 +37,7 @@
   --font-mono: var(--font-mono);
 }
 
-.carousel,
+/* .carousel,
 .carousel-slider {
   height: 100%;
 }
@@ -50,4 +50,8 @@
 .slider-wrapper,
 .axis-horizontal>ul {
   height: 100%;
+} */
+
+html {
+  scroll-behavior: smooth;
 }
