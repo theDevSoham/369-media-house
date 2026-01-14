@@ -1217,5 +1217,209 @@
         }
       }
     ]
+  },
+  {
+    "name": "blog",
+    "slug": "blog",
+    "route": "/blog",
+    "seo": {
+      "title": "Blogs | 369 Media House",
+      "description": "Strategy, content, advertising, analytics, and digital communication services by 369 Media House."
+    },
+    "component_data": [
+      {
+        "key": "nav_bar",
+        "name": "navbar",
+        "is_contained": false,
+        "background": "surface",
+        "props": {
+          "brandImage": "/images/logo.webp",
+          "brandText": "",
+          "navLinks": [
+            { "label": "Home", "link": "/", "type": "normal" },
+            { "label": "About", "link": "/about", "type": "normal" },
+            { "label": "Service", "link": "/service", "type": "normal" },
+            { "label": "Blog", "link": "/blog", "type": "normal" },
+            { "label": "Contact", "link": "/#contact", "type": "normal" }
+          ]
+        }
+      },
+      {
+        "wrapper": "section",
+        "key": "blog_blog_page_top",
+        "name": "layout",
+        "layout": "vertical",
+        "is_contained": true,
+        "background": "page",
+        "props": {
+          "totalColumns": 1,
+          "paddingY": "lg"
+        },
+        "component_data": [
+          {
+            "key": "blog-cards-container-top",
+            "name": "layout",
+            "layout": "horizontal",
+            "is_contained": false,
+            "grid_span": 1,
+            "props": {
+              "totalColumns": 3,
+              "gap": "gap-8"
+            },
+            "component_data": [
+              {
+                "key": "blog-card-1-top",
+                "name": "card",
+                "grid_span": 1,
+                "variant": "preview",
+                "props": {
+                  "title": "Interview",
+                  "description": "Jordy shares his learnings and best practices for sports social media, based on his 7+ years of experience.",
+                  "image": {
+                    "src": "/images/blog1.webp",
+                    "alt": "Interview illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+              {
+                "key": "blog-card-2-top",
+                "name": "card",
+                "grid_span": 1,
+                "variant": "preview",
+                "props": {
+                  "title": "Canva alternative:",
+                  "description": "Which template-based content creation platform should you choose for your team? Compare Content.",
+                  "image": {
+                    "src": "/images/blog2.webp",
+                    "alt": "Content creation illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+              {
+                "key": "blog-card-3-top",
+                "name": "card",
+                "grid_span": 1,
+                "variant": "preview",
+                "props": {
+                  "title": "Transfermarkt's",
+                  "description": "Discover how Transfermarkt unlocked new audiences and gained massive reach with the Club.",
+                  "image": {
+                    "src": "/images/blog3.webp",
+                    "alt": "Analytics illustration",
+                    "ratio": "square"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "wrapper": "section",
+        "key": "blog_blog_page_bottom",
+        "name": "layout",
+        "layout": "vertical",
+        "is_contained": true,
+        "background": "page",
+        "props": {
+          "totalColumns": 1,
+          "paddingY": "lg"
+        },
+        "component_data": [
+          {
+            "key": "blog-cards-container-bottom",
+            "name": "layout",
+            "layout": "horizontal",
+            "is_contained": false,
+            "grid_span": 1,
+            "props": {
+              "totalColumns": 3,
+              "gap": "gap-8"
+            },
+            "component_data": [
+              {
+                "key": "blog-card-1-bottom",
+                "name": "card",
+                "grid_span": 1,
+                "variant": "preview",
+                "props": {
+                  "title": "Interview",
+                  "description": "Jordy shares his learnings and best practices for sports social media, based on his 7+ years of experience.",
+                  "image": {
+                    "src": "/images/blog1.webp",
+                    "alt": "Interview illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+              {
+                "key": "blog-card-2-bottom",
+                "name": "card",
+                "grid_span": 1,
+                "variant": "preview",
+                "props": {
+                  "title": "Canva alternative:",
+                  "description": "Which template-based content creation platform should you choose for your team? Compare Content.",
+                  "image": {
+                    "src": "/images/blog2.webp",
+                    "alt": "Content creation illustration",
+                    "ratio": "square"
+                  }
+                }
+              },
+              {
+                "key": "blog-card-3-bottom",
+                "name": "card",
+                "grid_span": 1,
+                "variant": "preview",
+                "props": {
+                  "title": "Transfermarkt's",
+                  "description": "Discover how Transfermarkt unlocked new audiences and gained massive reach with the Club.",
+                  "image": {
+                    "src": "/images/blog3.webp",
+                    "alt": "Analytics illustration",
+                    "ratio": "square"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "site_footer",
+        "name": "footer",
+        "variant": "default",
+        "is_contained": false,
+        "background": "page",
+        "props": {
+          "social": [
+            {
+              "label": "Instagram",
+              "href": "https://instagram.com",
+              "icon": "instagram"
+            },
+            {
+              "label": "Facebook",
+              "href": "https://facebook.com",
+              "icon": "facebook"
+            },
+            {
+              "label": "Twitter",
+              "href": "https://twitter.com",
+              "icon": "twitter"
+            },
+            {
+              "label": "Email",
+              "href": "mailto:hello@cusub.com",
+              "icon": "mail"
+            }
+          ],
+          "copyright": "© 2026 369 Media House. All rights reserved."
+        }
+      }
+    ]
   }
 ]
