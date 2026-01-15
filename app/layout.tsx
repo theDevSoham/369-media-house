@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { loadTheme, themeToCssVars } from "@/lib/theme";
+import { getTheme, loadTheme, themeToCssVars } from "@/lib/theme";
 import { fontMap } from "@/lib/fontMap";
 
 export const metadata: Metadata = {
@@ -9,27 +9,31 @@ export const metadata: Metadata = {
     "Strategic social media, digital campaigns, and communication solutions that drive real impact.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const theme = loadTheme();
+  const theme = await getTheme({
+    slug: "default-theme",
+  });
+
+  if (!theme) throw new Error("Theme not found");
 
   const lightVars = themeToCssVars(theme, "light");
   const darkVars = themeToCssVars(theme, "dark");
 
   const css = `
     html[data-theme="light"] {
-    ${Object.entries(lightVars)
-      .map(([k, v]) => `${k}: ${v};`)
-      .join("")}
+      ${Object.entries(lightVars)
+        .map(([k, v]) => `${k}: ${v};`)
+        .join("")}
     }
 
     html[data-theme="dark"] {
-    ${Object.entries(darkVars)
-      .map(([k, v]) => `${k}: ${v};`)
-      .join("")}
+      ${Object.entries(darkVars)
+        .map(([k, v]) => `${k}: ${v};`)
+        .join("")}
     }
   `;
 
@@ -38,13 +42,16 @@ export default function RootLayout({
     .join(" ");
 
   return (
-    <html lang="en" data-theme={theme.meta.defaultMode} className={fontVariables}>
+    <html
+      lang="en"
+      data-theme={theme.meta.defaultMode}
+      className={fontVariables}
+    >
       <head>
         <style id="theme-vars" suppressHydrationWarning>
           {css}
         </style>
 
-        {/* theme sync WITHOUT touching style */}
         <script
           dangerouslySetInnerHTML={{
             __html: `

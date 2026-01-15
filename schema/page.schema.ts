@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import { z } from "zod";
 
 export type Wrapper = "section" | "article" | "div";
@@ -33,6 +34,7 @@ export const ComponentSchema: z.ZodType<any> = z.lazy(() =>
 );
 
 export const PageSchema = z.object({
+  _id: z.instanceof(ObjectId),
   name: z.string(),
   slug: z.string(),
   route: z.string(),
@@ -43,6 +45,14 @@ export const PageSchema = z.object({
     })
     .optional(),
   component_data: z.array(ComponentSchema),
+
+  /** Publishing */
+  status: z.enum(["draft", "published"]).default("draft"),
+  version: z.number().int().positive().default(1),
+
+  /** Audit fields (Mongo Extended JSON) */
+  createdAt: z.coerce.date(),
+  updatedAt: z.coerce.date(),
 });
 
 export const PagesSchema = z.array(PageSchema);

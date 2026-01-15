@@ -5,6 +5,7 @@ import SectionRenderer from "@/components/SectionRenderer";
 import { notFound } from "next/navigation";
 import z from "zod";
 import { Metadata } from "next";
+import { getPage } from "@/lib/pages";
 
 type PageParams = {
   slug?: string[];
@@ -13,15 +14,14 @@ type PageParams = {
 /* ---------------------------------------
    Helper: resolve page by route
 ---------------------------------------- */
-function getPageByPath(path: string) {
-  const parsed = PagesSchema.safeParse(pages);
+async function getPageByPath(path: string) {
+  const page = await getPage({ route: path });
 
-  if (!parsed.success) {
-    console.error(z.treeifyError(parsed.error));
-    throw new Error("Invalid pages schema");
+  if (!page) {
+    throw new Error("Page not found");
   }
 
-  return parsed.data.find((page) => page.route === path);
+  return page;
 }
 
 /* ---------------------------------------
@@ -35,12 +35,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const path = "/" + (slug?.join("/") ?? "");
 
-  const page = getPageByPath(path);
+  const page = await getPageByPath(path);
 
   if (!page) {
     return {
-      title: "Page Not Found",
-      description: "The page you are looking for does not exist.",
+      title: "Page not found | 369 Media House",
+      description: "Not found this page for " + path,
     };
   }
 
@@ -61,7 +61,7 @@ export default async function DynamicPage({
   const { slug } = await params;
   const path = "/" + (slug?.join("/") ?? "");
 
-  const page = getPageByPath(path);
+  const page = await getPageByPath(path);
 
   if (!page) {
     notFound();

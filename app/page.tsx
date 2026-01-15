@@ -4,39 +4,33 @@ import { PagesSchema } from "@/schema/page.schema";
 import z from "zod";
 import SectionRenderer from "@/components/SectionRenderer";
 import { Metadata } from "next";
+import { getPage } from "@/lib/pages";
+import { notFound } from "next/navigation";
 
-export function generateMetadata(): Metadata {
-  const pageData = PagesSchema.safeParse(pages);
+export async function generateMetadata(): Promise<Metadata> {
+  const pageData = await getPage({ name: "landing_page" });
 
-  if (!pageData.success) {
-    console.error(z.treeifyError(pageData.error));
-    throw new Error("Invalid page schema");
+  if (!pageData) {
+    return {
+      title: "Page",
+      description: "Not found",
+    };
   }
 
   return {
-    title: pageData.data.find((item) => item.name === "landing_page")!.seo
-      ?.title,
-    description: pageData.data.find((item) => item.name === "landing_page")!.seo
-      ?.description,
+    title: pageData.seo?.title,
+    description: pageData.seo?.description,
   };
 }
 
-const App = () => {
-  const pageData = PagesSchema.safeParse(pages);
+const App = async () => {
+  const pageData = await getPage({ name: "landing_page" });
 
-  if (!pageData.success) {
-    console.error(z.treeifyError(pageData.error));
-    throw new Error("Invalid page schema");
+  if (!pageData) {
+    notFound();
   }
 
-  return (
-    <SectionRenderer
-      nodes={
-        pageData.data.find((item) => item.name === "landing_page")!
-          .component_data
-      }
-    />
-  );
+  return <SectionRenderer nodes={pageData.component_data} />;
 };
 
 export default App;
