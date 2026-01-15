@@ -47,7 +47,7 @@ export default function WebsitePages() {
   }, []);
 
   if (loading) {
-    return <p className="text-gray-500">Loading theme…</p>;
+    return <p className="text-gray-500">Loading pages…</p>;
   }
 
   return (
