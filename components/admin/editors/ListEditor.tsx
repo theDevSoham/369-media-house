@@ -86,7 +86,7 @@ const ListEditor: React.FC<Props> = ({ component, path }) => {
 
                 {/* Nested children */}
                 {item.component_data?.length > 0 && (
-                  <div className="pl-4 border-l">
+                  <div className="pl-4 border-l-2 border-l-[#808080]">
                     <ListEditor
                       component={{
                         name: "list",

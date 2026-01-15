@@ -94,7 +94,7 @@ const FormEditor: React.FC<Props> = ({ component, path }) => {
 
                 {/* Nested layouts inside fields (rare but supported) */}
                 {field.component_data?.length > 0 && (
-                  <div className="pl-4 border-l">
+                  <div className="pl-4 border-l-2 border-l-[#808080]">
                     {field.component_data.map(
                       (child: any, childIndex: number) => (
                         <ComponentEditorRegistry

@@ -29,7 +29,7 @@ export default function PageComponentTree({
 
               {/* Children */}
               {component.component_data?.length > 0 && (
-                <div className="pl-4 border-l">
+                <div className="pl-4 border-l-2 border-l-[#808080]">
                   <PageComponentTree
                     components={component.component_data}
                     parentPath={`${path}.component_data`}
