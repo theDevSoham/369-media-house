@@ -24,8 +24,6 @@ export async function GET(
       .collection(process.env.PAGES_COLLECTION!)
       .findOne({ _id: new ObjectId(id) });
 
-    console.log(JSON.stringify(page));
-
     if (!page) {
       return NextResponse.json({ error: "Page not found" }, { status: 404 });
     }
