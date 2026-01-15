@@ -1,7 +1,11 @@
 // app/admin/dashboard/pages/page.tsx
+
+"use client";
+
 import Link from "next/link";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import { useEffect, useState } from "react";
 
 dayjs.extend(advancedFormat);
 
@@ -27,12 +31,24 @@ async function getPages(): Promise<Page[]> {
     throw new Error("Failed to fetch pages");
   }
 
-  const response = await res.json()
+  const response = await res.json();
   return response;
 }
 
-export default async function WebsitePages() {
-  const pages = await getPages();
+export default function WebsitePages() {
+  const [pages, setPages] = useState<Page[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    getPages()
+      .then(setPages)
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return <p className="text-gray-500">Loading theme…</p>;
+  }
 
   return (
     <div className="space-y-6">
