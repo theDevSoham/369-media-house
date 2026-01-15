@@ -43,6 +43,7 @@ export default async function RootLayout({
 
   return (
     <html
+      data-scroll-behavior="smooth"
       lang="en"
       data-theme={theme.meta.defaultMode}
       className={fontVariables}
