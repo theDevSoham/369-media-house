@@ -12,23 +12,22 @@ type LinkType = "normal" | "underlined" | "button" | "muted";
 
 type LinkEditorProps = {
   component: {
-    variant: LinkVariant;
-    type?: LinkType;
-    label: string;
-    value: string;
-    target?: "_blank" | "_self";
+    key: string;
+    name: "link";
+    props: {
+      variant: LinkVariant;
+      type?: LinkType;
+      label: string;
+      value: string;
+      target?: "_blank" | "_self";
+    };
   };
   path: string;
 };
 
 const LinkEditor: React.FC<LinkEditorProps> = ({ component, path }) => {
-  const {
-    label,
-    value,
-    variant,
-    type = "normal",
-    target = "_self",
-  } = component;
+  const { key, name: componentName, props } = component;
+  const { label, value, variant, type = "normal", target = "_self" } = props;
 
   return (
     <div className="space-y-4 rounded-lg border border-gray-200 p-4">
@@ -36,6 +35,22 @@ const LinkEditor: React.FC<LinkEditorProps> = ({ component, path }) => {
         Link
         <span className="ml-2 text-xs text-gray-400">{path}</span>
       </h3>
+
+      <div className="flex flex-col">
+        <input type="hidden" name={`${path}.name`} value={componentName} />
+      </div>
+
+      {/* Field key */}
+      <div className="flex flex-col gap-1">
+        <label className="text-xs font-medium text-gray-600">Key(unique)</label>
+        <input
+          type="text"
+          name={`${path}.key`} // ✅ FIX
+          defaultValue={key}
+          className="rounded-md border px-3 py-2 text-sm"
+          placeholder="Key"
+        />
+      </div>
 
       {/* Label */}
       <div className="flex flex-col gap-1">
