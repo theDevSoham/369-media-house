@@ -8,11 +8,13 @@ import { usePathname } from "next/navigation";
 
 type NavLink =
   | {
+      key: string;
       type: "normal";
       label: string;
       link: string;
     }
   | {
+      key: string;
       type: "button";
       label: string;
       action: "sign_in" | "sign_out";
@@ -76,12 +78,12 @@ const Navbar: React.FC<NavBarProps> = ({ brandImage, brandText, navLinks }) => {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((item, index) => {
+            {navLinks.map((item) => {
               switch (item.type) {
                 case "normal":
                   return (
                     <NavItem
-                      key={`nav_${item.type}_${index}`}
+                      key={`nav_${item.type}_${item.key}`}
                       label={item.label}
                       link={item.link}
                       selected={isRouteActive(pathName, item.link)}
@@ -91,7 +93,7 @@ const Navbar: React.FC<NavBarProps> = ({ brandImage, brandText, navLinks }) => {
                 case "button":
                   return (
                     <button
-                      key={`nav_${item.type}_${index}`}
+                      key={`nav_${item.type}_${item.key}`}
                       className="rounded-[var(--radius-md)] bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)] hover:bg-[var(--color-primary-hover)] active:bg-[var(--color-primary-active)]"
                       onClick={() => {}}
                     >
@@ -144,12 +146,12 @@ const Navbar: React.FC<NavBarProps> = ({ brandImage, brandText, navLinks }) => {
       {open && (
         <div className="md:hidden border-t border-[var(--color-border)] bg-[var(--color-bg-page)]">
           <div className="flex flex-col gap-4 px-4 py-4">
-            {navLinks.map((item, index) => {
+            {navLinks.map((item) => {
               switch (item.type) {
                 case "normal":
                   return (
                     <NavItem
-                      key={`nav_mobile_${item.type}_${index}`}
+                      key={`nav_mobile_${item.type}_${item.key}`}
                       label={item.label}
                       link={item.link}
                       mobile
@@ -160,7 +162,7 @@ const Navbar: React.FC<NavBarProps> = ({ brandImage, brandText, navLinks }) => {
                 case "button":
                   return (
                     <button
-                      key={`nav_mobile_${item.type}_${index}`}
+                      key={`nav_mobile_${item.type}_${item.key}`}
                       className="mt-2 rounded-[var(--radius-md)] bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)]"
                       onClick={() => {}}
                     >

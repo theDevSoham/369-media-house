@@ -1,4 +1,7 @@
 {
+  "_id": {
+    "$oid": "696864eb7869cc26195d8c73"
+  },
   "slug": "default-theme",
   "meta": {
     "name": "Default Theme",
@@ -6,7 +9,6 @@
     "supportsDark": true,
     "defaultMode": "light"
   },
-
   "modes": {
     "light": {
       "colors": {
@@ -16,33 +18,28 @@
           "primaryActive": "#808080",
           "secondary": "#22c55e"
         },
-
         "background": {
           "page": "#ffffff",
           "surface": "#B3B3B3",
           "card": "#ffffff",
           "overlay": "rgba(0,0,0,0.5)"
         },
-
         "text": {
           "primary": "#020617",
           "secondary": "#475569",
           "muted": "#64748b",
           "inverse": "#ffffff"
         },
-
         "border": {
           "default": "#808080",
           "focus": "#000000"
         },
-
         "state": {
           "success": "#22c55e",
           "error": "#ef4444"
         }
       }
     },
-
     "dark": {
       "colors": {
         "brand": {
@@ -51,26 +48,22 @@
           "primaryActive": "#4f46e5",
           "secondary": "#4ade80"
         },
-
         "background": {
           "page": "#020617",
           "surface": "#020617",
           "card": "#020617",
           "overlay": "rgba(0,0,0,0.7)"
         },
-
         "text": {
           "primary": "#e5e7eb",
           "secondary": "#94a3b8",
           "muted": "#64748b",
           "inverse": "#020617"
         },
-
         "border": {
           "default": "#1e293b",
           "focus": "#818cf8"
         },
-
         "state": {
           "success": "#22c55e",
           "error": "#f87171"
@@ -78,7 +71,6 @@
       }
     }
   },
-
   "typography": {
     "fontFamily": {
       "sans": "Inter, system-ui",
@@ -89,9 +81,15 @@
       "xl": "1.25rem"
     }
   },
-
   "radius": {
     "md": "1rem",
     "lg": "2rem"
+  },
+  "isActive": true,
+  "createdAt": {
+    "$date": "2026-01-15T03:55:13.901Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-15T03:55:13.901Z"
   }
 }

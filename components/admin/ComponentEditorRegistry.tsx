@@ -70,7 +70,7 @@ const ComponentEditorRegistry: React.FC<EditorProps> = ({
       return <SelectEditor component={component} path={path} />;
 
     case "capsule":
-      return <CapsuleEditor component={component.props} path={path} />;
+      return <CapsuleEditor component={component} path={path} />;
 
     /* ===== transparent fallback ===== */
 

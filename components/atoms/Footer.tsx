@@ -4,6 +4,7 @@ import { socialIconMap } from "@/components/atoms/Icons";
 interface FooterProps {
   variant: "default";
   social?: Array<{
+    key: string;
     label: string;
     href: string;
     icon: keyof typeof socialIconMap;
@@ -21,7 +22,7 @@ const Footer: React.FC<FooterProps> = ({ variant, social = [], copyright }) => {
         {social.length > 0 && (
           <ul className="flex gap-6">
             {social.map((item) => (
-              <li key={item.label}>
+              <li key={item.key}>
                 <a
                   href={item.href}
                   target={item.href.startsWith("http") ? "_blank" : undefined}

@@ -7,15 +7,19 @@ type Props = {
 
 export default function PageComponentTree({
   components,
-  parentPath = "component_data",
+  parentPath = "patch.component_data",
 }: Props) {
   return (
     <div className="space-y-4">
-      {components.map((component, index) => {
-        const path = `${parentPath}.${index}`;
+      {components.map((component) => {
+        // 🔑 KEY-BASED PATCH PATH
+        const path = `${parentPath}.${component.key}`;
 
         return (
-          <div key={component.key} className="rounded-md border bg-white overflow-hidden">
+          <div
+            key={component.key}
+            className="rounded-md border bg-white overflow-hidden"
+          >
             <div className="flex items-center justify-between px-4 py-2 bg-gray-50">
               <div>
                 <p className="font-medium capitalize">{component.name}</p>
@@ -24,7 +28,7 @@ export default function PageComponentTree({
             </div>
 
             <div className="p-4 space-y-4">
-              {/* Editor for this component */}
+              {/* Editor for THIS component */}
               <ComponentEditorRegistry component={component} path={path} />
 
               {/* Children */}

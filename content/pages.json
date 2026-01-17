@@ -1,5 +1,8 @@
 [
   {
+    "_id": {
+      "$oid": "696861d67869cc26195d8c6d"
+    },
     "name": "landing_page",
     "slug": "landing_page",
     "route": "/",
@@ -17,11 +20,36 @@
           "brandImage": "/images/logo.webp",
           "brandText": "",
           "navLinks": [
-            { "label": "Home", "link": "/", "type": "normal" },
-            { "label": "About", "link": "/about", "type": "normal" },
-            { "label": "Service", "link": "/service", "type": "normal" },
-            { "label": "Blog", "link": "/blog", "type": "normal" },
-            { "label": "Contact", "link": "/#contact", "type": "normal" }
+            {
+              "key": "nav-home",
+              "label": "Home",
+              "link": "/",
+              "type": "normal"
+            },
+            {
+              "key": "nav-about",
+              "label": "About",
+              "link": "/about",
+              "type": "normal"
+            },
+            {
+              "key": "nav-service",
+              "label": "Service",
+              "link": "/service",
+              "type": "normal"
+            },
+            {
+              "key": "nav-blog",
+              "label": "Blog",
+              "link": "/blog",
+              "type": "normal"
+            },
+            {
+              "key": "nav-contact",
+              "label": "Contact",
+              "link": "/#contact",
+              "type": "normal"
+            }
           ]
         }
       },
@@ -603,21 +631,25 @@
         "props": {
           "social": [
             {
+              "key": "insta-footer",
               "label": "Instagram",
               "href": "https://instagram.com",
               "icon": "instagram"
             },
             {
+              "key": "fb-footer",
               "label": "Facebook",
               "href": "https://facebook.com",
               "icon": "facebook"
             },
             {
+              "key": "twitter-footer",
               "label": "Twitter",
               "href": "https://twitter.com",
               "icon": "twitter"
             },
             {
+              "key": "email-footer",
               "label": "Email",
               "href": "mailto:hello@cusub.com",
               "icon": "mail"
@@ -626,9 +658,20 @@
           "copyright": "© 2026 369 Media House. All rights reserved."
         }
       }
-    ]
+    ],
+    "status": "published",
+    "version": 8,
+    "createdAt": {
+      "$date": "2026-01-15T03:44:41.865Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-16T09:41:41.737Z"
+    }
   },
   {
+    "_id": {
+      "$oid": "696862f47869cc26195d8c6e"
+    },
     "name": "about",
     "slug": "about",
     "route": "/about",
@@ -646,11 +689,36 @@
           "brandImage": "/images/logo.webp",
           "brandText": "",
           "navLinks": [
-            { "label": "Home", "link": "/", "type": "normal" },
-            { "label": "About", "link": "/about", "type": "normal" },
-            { "label": "Service", "link": "/service", "type": "normal" },
-            { "label": "Blog", "link": "/blog", "type": "normal" },
-            { "label": "Contact", "link": "/#contact", "type": "normal" }
+            {
+              "key": "nav-home",
+              "label": "Home",
+              "link": "/",
+              "type": "normal"
+            },
+            {
+              "key": "nav-about",
+              "label": "About",
+              "link": "/about",
+              "type": "normal"
+            },
+            {
+              "key": "nav-service",
+              "label": "Service",
+              "link": "/service",
+              "type": "normal"
+            },
+            {
+              "key": "nav-blog",
+              "label": "Blog",
+              "link": "/blog",
+              "type": "normal"
+            },
+            {
+              "key": "nav-contact",
+              "label": "Contact",
+              "link": "/#contact",
+              "type": "normal"
+            }
           ]
         }
       },
@@ -975,21 +1043,25 @@
         "props": {
           "social": [
             {
+              "key": "insta-footer",
               "label": "Instagram",
               "href": "https://instagram.com",
               "icon": "instagram"
             },
             {
+              "key": "fb-footer",
               "label": "Facebook",
               "href": "https://facebook.com",
               "icon": "facebook"
             },
             {
+              "key": "twitter-footer",
               "label": "Twitter",
               "href": "https://twitter.com",
               "icon": "twitter"
             },
             {
+              "key": "email-footer",
               "label": "Email",
               "href": "mailto:hello@cusub.com",
               "icon": "mail"
@@ -998,9 +1070,20 @@
           "copyright": "© 2026 369 Media House. All rights reserved."
         }
       }
-    ]
+    ],
+    "status": "published",
+    "version": 1,
+    "createdAt": {
+      "$date": "2026-01-15T03:44:41.865Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-15T03:44:41.865Z"
+    }
   },
   {
+    "_id": {
+      "$oid": "696863577869cc26195d8c6f"
+    },
     "name": "service",
     "slug": "service",
     "route": "/service",
@@ -1018,11 +1101,36 @@
           "brandImage": "/images/logo.webp",
           "brandText": "",
           "navLinks": [
-            { "label": "Home", "link": "/", "type": "normal" },
-            { "label": "About", "link": "/about", "type": "normal" },
-            { "label": "Service", "link": "/service", "type": "normal" },
-            { "label": "Blog", "link": "/blog", "type": "normal" },
-            { "label": "Contact", "link": "/#contact", "type": "normal" }
+            {
+              "key": "nav-home",
+              "label": "Home",
+              "link": "/",
+              "type": "normal"
+            },
+            {
+              "key": "nav-about",
+              "label": "About",
+              "link": "/about",
+              "type": "normal"
+            },
+            {
+              "key": "nav-service",
+              "label": "Service",
+              "link": "/service",
+              "type": "normal"
+            },
+            {
+              "key": "nav-blog",
+              "label": "Blog",
+              "link": "/blog",
+              "type": "normal"
+            },
+            {
+              "key": "nav-contact",
+              "label": "Contact",
+              "link": "/#contact",
+              "type": "normal"
+            }
           ]
         }
       },
@@ -1047,7 +1155,6 @@
               "align": "center"
             }
           },
-
           {
             "key": "service-cards-grid",
             "name": "layout",
@@ -1118,7 +1225,6 @@
                   }
                 }
               },
-
               {
                 "key": "service-card-5",
                 "name": "card",
@@ -1183,7 +1289,6 @@
           }
         ]
       },
-
       {
         "key": "site_footer",
         "name": "footer",
@@ -1193,32 +1298,47 @@
         "props": {
           "social": [
             {
+              "key": "insta-footer",
               "label": "Instagram",
               "href": "https://instagram.com",
               "icon": "instagram"
             },
             {
+              "key": "fb-footer",
               "label": "Facebook",
               "href": "https://facebook.com",
               "icon": "facebook"
             },
             {
+              "key": "twitter-footer",
               "label": "Twitter",
               "href": "https://twitter.com",
               "icon": "twitter"
             },
             {
+              "key": "email-footer",
               "label": "Email",
-              "href": "mailto:hello@369mediahouse.com",
+              "href": "mailto:hello@cusub.com",
               "icon": "mail"
             }
           ],
           "copyright": "© 2026 369 Media House. All rights reserved."
         }
       }
-    ]
+    ],
+    "status": "published",
+    "version": 1,
+    "createdAt": {
+      "$date": "2026-01-15T03:44:41.865Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-15T03:44:41.865Z"
+    }
   },
   {
+    "_id": {
+      "$oid": "696863d57869cc26195d8c70"
+    },
     "name": "blog",
     "slug": "blog",
     "route": "/blog",
@@ -1236,11 +1356,36 @@
           "brandImage": "/images/logo.webp",
           "brandText": "",
           "navLinks": [
-            { "label": "Home", "link": "/", "type": "normal" },
-            { "label": "About", "link": "/about", "type": "normal" },
-            { "label": "Service", "link": "/service", "type": "normal" },
-            { "label": "Blog", "link": "/blog", "type": "normal" },
-            { "label": "Contact", "link": "/#contact", "type": "normal" }
+            {
+              "key": "nav-home",
+              "label": "Home",
+              "link": "/",
+              "type": "normal"
+            },
+            {
+              "key": "nav-about",
+              "label": "About",
+              "link": "/about",
+              "type": "normal"
+            },
+            {
+              "key": "nav-service",
+              "label": "Service",
+              "link": "/service",
+              "type": "normal"
+            },
+            {
+              "key": "nav-blog",
+              "label": "Blog",
+              "link": "/blog",
+              "type": "normal"
+            },
+            {
+              "key": "nav-contact",
+              "label": "Contact",
+              "link": "/#contact",
+              "type": "normal"
+            }
           ]
         }
       },
@@ -1397,21 +1542,25 @@
         "props": {
           "social": [
             {
+              "key": "insta-footer",
               "label": "Instagram",
               "href": "https://instagram.com",
               "icon": "instagram"
             },
             {
+              "key": "fb-footer",
               "label": "Facebook",
               "href": "https://facebook.com",
               "icon": "facebook"
             },
             {
+              "key": "twitter-footer",
               "label": "Twitter",
               "href": "https://twitter.com",
               "icon": "twitter"
             },
             {
+              "key": "email-footer",
               "label": "Email",
               "href": "mailto:hello@cusub.com",
               "icon": "mail"
@@ -1420,6 +1569,14 @@
           "copyright": "© 2026 369 Media House. All rights reserved."
         }
       }
-    ]
+    ],
+    "status": "published",
+    "version": 1,
+    "createdAt": {
+      "$date": "2026-01-15T03:44:41.865Z"
+    },
+    "updatedAt": {
+      "$date": "2026-01-15T03:44:41.865Z"
+    }
   }
 ]

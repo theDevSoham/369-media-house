@@ -41,9 +41,9 @@ const FooterEditor: React.FC<Props> = ({ component, path }) => {
       <div className="space-y-3">
         <p className="text-xs font-semibold text-gray-600">Social Links</p>
 
-        {social.map((item: any, index: number) => (
+        {social.map((item: any) => (
           <div
-            key={index}
+            key={item.key}
             className="grid grid-cols-3 gap-2 rounded border bg-white p-2"
           >
             {/* Label */}
@@ -51,7 +51,7 @@ const FooterEditor: React.FC<Props> = ({ component, path }) => {
               <label className="block text-xs mb-1">Label</label>
               <input
                 type="text"
-                name={`${path}.props.social.${index}.label`}
+                name={`${path}.props.social.${item.key}.label`}
                 defaultValue={item.label}
                 className="w-full rounded border px-2 py-1 text-xs"
               />
@@ -62,7 +62,7 @@ const FooterEditor: React.FC<Props> = ({ component, path }) => {
               <label className="block text-xs mb-1">URL</label>
               <input
                 type="text"
-                name={`${path}.props.social.${index}.href`}
+                name={`${path}.props.social.${item.key}.href`}
                 defaultValue={item.href}
                 className="w-full rounded border px-2 py-1 text-xs"
               />
@@ -72,7 +72,7 @@ const FooterEditor: React.FC<Props> = ({ component, path }) => {
             <div>
               <label className="block text-xs mb-1">Icon</label>
               <select
-                name={`${path}.props.social.${index}.icon`}
+                name={`${path}.props.social.${item.key}.icon`}
                 defaultValue={item.icon}
                 className="w-full rounded border px-2 py-1 text-xs"
               >
