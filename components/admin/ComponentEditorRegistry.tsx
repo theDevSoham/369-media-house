@@ -52,7 +52,7 @@ const ComponentEditorRegistry: React.FC<EditorProps> = ({
       return <TypographyEditor component={component} path={path} />;
 
     case "chip":
-      return <ChipEditor component={component.props} path={path} />;
+      return <ChipEditor component={component} path={path} />;
 
     case "card":
       return <CardEditor component={component} path={path} />;

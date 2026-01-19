@@ -48,13 +48,13 @@ const ImageAtom: React.FC<ImageProps> = ({
 
   // 🔹 Default behavior (NO BREAKING CHANGE)
   return (
-    <div className={wrapperClass}>
+    <div className={`${wrapperClass}`}>
       <Image
         src={source}
         alt={alt}
         width={width}
         height={height}
-        className={`w-full h-auto object-${mode}`}
+        className={`w-full h-full object-${mode}`}
       />
     </div>
   );
