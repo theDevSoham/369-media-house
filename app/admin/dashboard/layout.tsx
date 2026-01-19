@@ -37,10 +37,10 @@ export default function AdminLayout({
           </Link>
 
           <Link
-            href="/admin/dashboard/settings"
+            href="/admin/dashboard/contacted"
             className="block px-3 py-2 rounded hover:bg-gray-800"
           >
-            Settings
+            Contacted Us
           </Link>
         </nav>
 
