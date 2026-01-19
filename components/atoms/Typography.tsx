@@ -2,7 +2,7 @@
 import React, { JSX } from "react";
 import clsx from "clsx";
 
-type TypographyMode = "h1" | "h2" | "h3" | "p";
+type TypographyMode = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
 type TextAlign = "left" | "center" | "right" | "justify";
 
 interface TypographyProps {
@@ -29,6 +29,9 @@ const MODE_CLASS_MAP: Record<TypographyMode, string> = {
   h1: "font-sans text-4xl md:text-6xl font-bold",
   h2: "font-sans text-xl md:text-2xl font-semibold",
   h3: "font-sans text-lg font-semibold",
+  h4: "font-sans text-base font-semibold",
+  h5: "font-sans text-sm font-medium",
+  h6: "font-sans text-xs font-medium uppercase tracking-wide",
   p: "text-sm leading-relaxed",
 };
 
