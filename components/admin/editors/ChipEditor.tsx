@@ -46,9 +46,9 @@ const ChipEditor: React.FC<ChipEditorProps> = ({ component, path }) => {
         <label className="text-xs font-medium">Grid span</label>
         <input
           type="number"
-          min={1}
+          min={0}
           name={`${path}.grid_span`}
-          defaultValue={grid_span ?? 1}
+          defaultValue={grid_span ?? ""}
           className="w-full rounded-md border px-2 py-1 text-sm"
         />
       </div>
@@ -71,6 +71,7 @@ const ChipEditor: React.FC<ChipEditorProps> = ({ component, path }) => {
         <label className="text-xs font-medium text-gray-600">Text</label>
         <input
           type="text"
+          name={`${path}.props.text`}
           defaultValue={text}
           className="rounded-md border px-3 py-2 text-sm"
           /* onChange handled by editor system */
@@ -81,6 +82,7 @@ const ChipEditor: React.FC<ChipEditorProps> = ({ component, path }) => {
       <div className="flex flex-col gap-1">
         <label className="text-xs font-medium text-gray-600">Variant</label>
         <select
+          name={`${path}.props.variant`}
           defaultValue={variant}
           className="rounded-md border px-3 py-2 text-sm"
         >
@@ -93,6 +95,7 @@ const ChipEditor: React.FC<ChipEditorProps> = ({ component, path }) => {
       <div className="flex flex-col gap-1">
         <label className="text-xs font-medium text-gray-600">Background</label>
         <select
+          name={`${path}.props.background`}
           defaultValue={background ?? ""}
           className="rounded-md border px-3 py-2 text-sm"
         >

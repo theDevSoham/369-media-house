@@ -82,7 +82,7 @@ export default function TypographyEditor({ component, path }: Props) {
           <label className="text-xs font-medium">Align</label>
           <select
             name={`${path}.props.align`}
-            defaultValue={props.align ?? "left"}
+            defaultValue={props.align ?? "center"}
             className="w-full rounded-md border px-2 py-1 text-sm"
           >
             <option value="left">Left</option>

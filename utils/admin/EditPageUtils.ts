@@ -1,5 +1,7 @@
 import { ComponentContracts } from "./ComponentContracts";
 
+const TERMINATE_VALUES = new Set(["", "none", "normal", undefined, "rounded", "center"]);
+
 export function setDeepValue(
   target: any,
   path: (string | number)[],
@@ -47,7 +49,7 @@ export function formDataToNestedObject(formData: FormData) {
       .split(".")
       .map((segment) => (segment.match(/^\d+$/) ? Number(segment) : segment));
 
-    setDeepValue(result, path, rawValue);
+    setDeepValue(result, path, coerce(rawValue));
   }
 
   return result;
@@ -157,4 +159,55 @@ export function denormalizeComponent(component: any): any {
   }
 
   return component;
+}
+
+function coerce(value: FormDataEntryValue) {
+  if (value === "true") return true;
+  if (value === "false") return false;
+  if (value !== "" && !isNaN(Number(value))) return Number(value);
+  return value;
+}
+
+export function pruneTerminatedValues<T>(input: T): T {
+  // primitives
+  if (input === null || typeof input !== "object") {
+    return input;
+  }
+
+  // arrays → recurse but DO NOT remove indices
+  if (Array.isArray(input)) {
+    return input.map(pruneTerminatedValues) as T;
+  }
+
+  // objects
+  const result: any = {};
+
+  for (const [key, value] of Object.entries(input)) {
+    // never delete identity fields
+    if (key === "key" || key === "name") {
+      result[key] = value;
+      continue;
+    }
+
+    // terminate exact matches
+    if (TERMINATE_VALUES.has(value as any)) {
+      continue;
+    }
+
+    const cleaned = pruneTerminatedValues(value);
+
+    // remove empty objects
+    if (
+      typeof cleaned === "object" &&
+      cleaned !== null &&
+      !Array.isArray(cleaned) &&
+      Object.keys(cleaned).length === 0
+    ) {
+      continue;
+    }
+
+    result[key] = cleaned;
+  }
+
+  return result;
 }

@@ -29,9 +29,10 @@ const LayoutEditor: React.FC<Props> = ({ component, path }) => {
         </label>
         <select
           name={`${path}.layout`}
-          defaultValue={component.layout ?? "horizontal"}
+          defaultValue={component.layout ?? "none"}
           className="w-full rounded border px-2 py-1 text-sm"
         >
+          <option value="">None</option>
           <option value="horizontal">Horizontal</option>
           <option value="vertical">Vertical</option>
         </select>
@@ -59,9 +60,10 @@ const LayoutEditor: React.FC<Props> = ({ component, path }) => {
         <label className="block text-xs font-medium mb-1">Gap</label>
         <select
           name={`${path}.props.gap`}
-          defaultValue={props.gap ?? "gap-8"}
+          defaultValue={props.gap ?? "none"}
           className="w-full rounded border px-2 py-1 text-sm"
         >
+          <option value="">None</option>
           {GAP_OPTIONS.map((g) => (
             <option key={g} value={g}>
               {g}

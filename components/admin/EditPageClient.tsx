@@ -5,6 +5,7 @@ import {
   denormalizeComponent,
   formDataToNestedObject,
   normalizeForPatch,
+  pruneTerminatedValues,
 } from "@/utils/admin/EditPageUtils";
 import PageComponentTree from "./PageComponentTree";
 import dayjs from "dayjs";
@@ -47,7 +48,7 @@ export default function EditPageClient({ page }: { page: Page }) {
       for (const [k, v] of formData.entries()) {
         console.log("FORM:", k, v);
       }
-      const patch = formDataToNestedObject(formData);
+      const patch = pruneTerminatedValues(formDataToNestedObject(formData));
       //   console.log("PATCH:", JSON.stringify(patch, null, 2));
 
       // Clone existing tree (never mutate source)
@@ -81,22 +82,22 @@ export default function EditPageClient({ page }: { page: Page }) {
 
       console.log("FINAL PAYLOAD:", JSON.stringify(payload));
 
-      //   const res = await fetch(`/api/admin/pages/${page._id}`, {
-      //     method: "PUT",
-      //     headers: { "Content-Type": "application/json" },
-      //     body: JSON.stringify(payload),
-      //   });
+      const res = await fetch(`/api/admin/pages/${page._id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-      //   if (!res.ok) {
-      //     const errorBody = await res.json().catch(() => null);
-      //     console.error("PUT failed", res.status, errorBody);
-      //     alert(errorBody?.error ?? "Failed to update page");
-      //     return;
-      //   }
+      if (!res.ok) {
+        const errorBody = await res.json().catch(() => null);
+        console.error("PUT failed", res.status, errorBody);
+        alert(errorBody?.error ?? "Failed to update page");
+        return;
+      }
 
-      //   const updatedPage = await res.json();
-      //   console.log("PAGE UPDATED SUCCESSFULLY:", updatedPage);
-      //   alert("Page updated successfully ✅");
+      const updatedPage = await res.json();
+      console.log("PAGE UPDATED SUCCESSFULLY:", updatedPage);
+      alert("Page updated successfully ✅");
     } catch (err) {
       console.error("handleSubmit error:", err);
       alert("Something went wrong while saving the page ❌");
