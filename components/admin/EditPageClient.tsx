@@ -13,8 +13,11 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
+import { toast } from "sonner";
 
 dayjs.extend(advancedFormat);
+
+const TOAST_ID = "save-page";
 
 type Page = {
   _id: string;
@@ -42,10 +45,12 @@ export default function EditPageClient({ page }: { page: Page }) {
 
     setIsSaving(true);
 
+    toast.loading("Saving changes…", { id: TOAST_ID });
+
     try {
       if (!formRef.current) {
         console.error("Form ref not attached");
-        alert("Internal error: form not ready");
+        toast.error("Internal error: form not ready", { id: TOAST_ID });
         return;
       }
 
@@ -97,17 +102,25 @@ export default function EditPageClient({ page }: { page: Page }) {
       if (!res.ok) {
         const errorBody = await res.json().catch(() => null);
         console.error("PUT failed", res.status, errorBody);
-        alert(errorBody?.error ?? "Failed to update page");
+        toast.error(errorBody?.error ?? "Failed to update page", {
+          id: TOAST_ID,
+        });
         return;
       }
 
       const updatedPage = await res.json();
       console.log("PAGE UPDATED SUCCESSFULLY:", updatedPage);
-      alert("Page updated successfully ✅");
+      toast.success("Page updated successfully ✅", { id: TOAST_ID });
     } catch (err) {
       console.error("handleSubmit error:", err);
-      alert("Something went wrong while saving the page ❌");
+      toast.error("Something went wrong while saving the page ❌", {
+        id: TOAST_ID,
+      });
     } finally {
+      const timeout = setTimeout(() => {
+        toast.dismiss(TOAST_ID);
+        clearTimeout(timeout);
+      }, 2000);
       setIsSaving(false);
     }
   };
