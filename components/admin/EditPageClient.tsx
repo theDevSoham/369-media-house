@@ -11,7 +11,8 @@ import PageComponentTree from "./PageComponentTree";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import clsx from "clsx";
 
 dayjs.extend(advancedFormat);
 
@@ -32,9 +33,14 @@ type Page = {
 };
 
 export default function EditPageClient({ page }: { page: Page }) {
+  const [isSaving, setIsSaving] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (isSaving) return;
+
+    setIsSaving(true);
 
     try {
       if (!formRef.current) {
@@ -101,6 +107,8 @@ export default function EditPageClient({ page }: { page: Page }) {
     } catch (err) {
       console.error("handleSubmit error:", err);
       alert("Something went wrong while saving the page ❌");
+    } finally {
+      setIsSaving(false);
     }
   };
 
@@ -119,6 +127,7 @@ export default function EditPageClient({ page }: { page: Page }) {
       </div>
 
       <form
+        id="edit-page-form"
         ref={formRef}
         className="space-y-6 rounded-md border bg-white p-6 shadow-sm"
         onSubmit={handleSubmit}
@@ -215,7 +224,7 @@ export default function EditPageClient({ page }: { page: Page }) {
         </div>
 
         {/* Actions */}
-        <div className="flex justify-end gap-3">
+        {/* <div className="flex justify-end gap-3">
           <Link
             href="/admin/dashboard/pages"
             className="rounded-md border px-4 py-2 text-sm"
@@ -229,8 +238,38 @@ export default function EditPageClient({ page }: { page: Page }) {
           >
             Save Changes
           </button>
-        </div>
+        </div> */}
       </form>
+
+      {/* Floating Action Panel */}
+      <div className="fixed bottom-6 right-8 z-50 bg-none backdrop-blur">
+        <div className="flex items-center gap-3 rounded-xl border bg-white px-4 py-3 shadow-lg">
+          <Link
+            href={isSaving ? "#" : "/admin/dashboard/pages"}
+            className={clsx(
+              "rounded-md border px-4 py-2 text-sm",
+              isSaving && "pointer-events-none opacity-50",
+            )}
+          >
+            Cancel
+          </Link>
+
+          <button
+            type="submit"
+            form="edit-page-form"
+            disabled={isSaving}
+            onClick={() => formRef.current?.requestSubmit()}
+            className={clsx(
+              "rounded-md px-5 py-2 text-sm font-medium text-white transition",
+              isSaving
+                ? "cursor-not-allowed bg-gray-400"
+                : "bg-black hover:bg-black/90",
+            )}
+          >
+            {isSaving ? "Saving…" : "Save Changes"}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
