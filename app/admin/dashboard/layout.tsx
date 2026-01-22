@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { Toaster } from "sonner";
 
 export default function AdminLayout({
   children,
@@ -9,7 +8,6 @@ export default function AdminLayout({
 }) {
   return (
     <div className="min-h-screen flex bg-gray-100">
-      <Toaster position="bottom-right" richColors closeButton />
       {/* Sidebar */}
       <aside className="w-64 bg-gray-900 text-white flex flex-col">
         <div className="p-4 text-xl font-bold border-b border-gray-800">
