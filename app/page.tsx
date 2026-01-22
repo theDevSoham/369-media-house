@@ -7,6 +7,8 @@ import { Metadata } from "next";
 import { getPage } from "@/lib/pages";
 import { notFound } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata(): Promise<Metadata> {
   const pageData = await getPage({ name: "landing_page" });
 

@@ -24,6 +24,8 @@ async function getPageByPath(path: string) {
   return page;
 }
 
+export const dynamic = "force-dynamic";
+
 /* ---------------------------------------
    Metadata
 ---------------------------------------- */
