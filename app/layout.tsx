@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { getTheme, loadTheme, themeToCssVars } from "@/lib/theme";
 import { fontMap } from "@/lib/fontMap";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "369 Media House",
@@ -66,7 +67,10 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased`}>
+        <Toaster position="top-right" richColors closeButton />
+        {children}
+      </body>
     </html>
   );
 }

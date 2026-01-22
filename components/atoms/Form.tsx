@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import List, { ListItem } from "../atoms/List";
+import { toast } from "sonner";
 
 interface FormProps {
   variant?: "stacked" | "inline";
@@ -13,6 +14,8 @@ interface FormProps {
 
   fields?: ListItem[];
 }
+
+const TOAST_ID = "form-toast";
 
 const Form: React.FC<FormProps> = ({
   variant = "stacked",
@@ -49,14 +52,19 @@ const Form: React.FC<FormProps> = ({
 
       const result = await res.json();
       console.log("Form response:", result);
-      alert("Your data has been received!");
+      toast.success("Your data has been received!", { id: TOAST_ID });
 
       // 🔹 hook for success toast / redirect later
     } catch (err) {
       console.error("Form submit failed:", err);
+      toast.error("Form submission failed", { id: TOAST_ID });
     } finally {
       setLoading(false);
       if (clearFormAfterSubmit) formRef?.current?.reset();
+      const timeout = setTimeout(() => {
+        toast.dismiss(TOAST_ID);
+        clearTimeout(timeout);
+      }, 2000);
     }
   };
 
