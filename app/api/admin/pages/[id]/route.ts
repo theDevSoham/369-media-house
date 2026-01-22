@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 import clientPromise from "@/lib/mongodb";
-import { revalidateTag } from "next/cache";
-import { CACHE_TAGS } from "@/lib/cacheTags";
 
 /**
  * GET /api/admin/pages/:id
@@ -213,8 +211,7 @@ export async function PUT(
         { status: 500 },
       );
     }
-    /* -------------------- revalidate pages -------------------- */
-    revalidateTag(CACHE_TAGS.PAGES, { expire: 0 });
+
     console.log("✅ Page updated successfully:", result);
 
     /* -------------------- Response -------------------- */
