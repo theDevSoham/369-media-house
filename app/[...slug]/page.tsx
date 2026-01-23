@@ -24,7 +24,7 @@ async function getPageByPath(path: string) {
   return page;
 }
 
-export const dynamic = "force-dynamic";
+export const revalidate = 600; // page HTML cache
 
 /* ---------------------------------------
    Metadata
