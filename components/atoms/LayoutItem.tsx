@@ -3,11 +3,13 @@ import React from "react";
 import clsx from "clsx";
 
 type GridItemProps = {
-  span?: number;
+  colSpan?: number;
+  rowSpan?: number;
+  className?: string;
   children: React.ReactNode;
 };
 
-const GRID_SPAN_MAP: Record<number, string> = {
+const COL_SPAN_MAP: Record<number, string> = {
   1: "col-span-1",
   2: "col-span-2",
   3: "col-span-3",
@@ -22,11 +24,29 @@ const GRID_SPAN_MAP: Record<number, string> = {
   12: "col-span-12",
 };
 
-const LayoutItem: React.FC<GridItemProps> = ({ span, children }) => {
-  if (!span) return <>{children}</>;
+const ROW_SPAN_MAP: Record<number, string> = {
+  1: "row-span-1",
+  2: "row-span-2",
+  3: "row-span-3",
+  4: "row-span-4",
+  5: "row-span-5",
+  6: "row-span-6",
+};
 
+const LayoutItem: React.FC<GridItemProps> = ({
+  colSpan,
+  rowSpan,
+  className,
+  children,
+}) => {
   return (
-    <div className={clsx(GRID_SPAN_MAP[span])}>
+    <div
+      className={clsx(
+        colSpan && COL_SPAN_MAP[colSpan],
+        rowSpan && ROW_SPAN_MAP[rowSpan],
+        className,
+      )}
+    >
       {children}
     </div>
   );

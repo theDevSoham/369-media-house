@@ -10,6 +10,7 @@ export type ListItem = {
   layout?: "horizontal" | "vertical";
   mode?: string;
   grid_span?: number;
+  row_span?: number;
   component_data?: ListItem[];
 };
 
@@ -57,7 +58,11 @@ const List: React.FC<ListProps> = ({
         );
 
         return (
-          <LayoutItem key={item.key} span={item.grid_span}>
+          <LayoutItem
+            key={item.key}
+            colSpan={item.grid_span}
+            rowSpan={item.row_span}
+          >
             {content}
           </LayoutItem>
         );

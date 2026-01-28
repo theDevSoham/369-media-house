@@ -28,6 +28,7 @@ type SectionNode = {
   is_contained: boolean;
   background?: "page" | "surface" | "card" | "primary" | "secondary";
   grid_span: number;
+  row_span?: number;
   component_data?: SectionNode[];
 };
 
@@ -55,7 +56,11 @@ const SectionRenderer: React.FC<SectionRendererProps> = ({ nodes }) => {
         );
 
         return (
-          <LayoutItem key={item.key} span={item.grid_span}>
+          <LayoutItem
+            key={item.key}
+            colSpan={item.grid_span}
+            rowSpan={item.row_span}
+          >
             {content}
           </LayoutItem>
         );

@@ -80,12 +80,13 @@
                 "is_contained": false,
                 "grid_span": 2,
                 "props": {
-                  "source": "/images/hero.webp",
+                  "source": "https://res.cloudinary.com/dourjocrv/image/upload/v1769107551/369-media-house/pasycgyseajwlrmxkf2t.webp",
                   "alt": "Girl sitting with a computer",
                   "width": 500,
                   "height": 500,
                   "mode": "cover"
-                }
+                },
+                "row_span": 4
               },
               {
                 "key": "hero1_description",
@@ -110,7 +111,7 @@
                     "name": "typography",
                     "is_contained": false,
                     "props": {
-                      "mode": "h4",
+                      "mode": "h5",
                       "text": "Social media is crowded, and standing out needs more than trends—it needs clarity. That’s where we come in. We plan, create, and execute campaigns that connect with real people and drive real business growth."
                     }
                   }
@@ -166,7 +167,7 @@
                     "name": "typography",
                     "is_contained": false,
                     "props": {
-                      "mode": "h4",
+                      "mode": "h5",
                       "text": "369 Media House is a leading social media Team with a focus on helping political figures and organizations leverage digital platforms to win hearts and votes. With a team of 11 skilled professionals, we provide end-to-end services that include content creation, digital strategy, community engagement and crisis management. Our team is equipped to deliver high-impact social media campaigns for you looking to maximize their digital footprint and engage with the public."
                     }
                   }
@@ -248,92 +249,102 @@
               "containerClass": "px-2 lg:px-4",
               "items": [
                 {
+                  "name": "chip",
                   "key": "services-chip_1",
-                  "name": "chip",
+                  "is_contained": false,
                   "props": {
-                    "variant": "tag",
                     "text": "Strategy & Planning",
+                    "variant": "tag",
                     "background": "page"
                   }
                 },
                 {
+                  "name": "chip",
                   "key": "services-chip_2",
-                  "name": "chip",
+                  "is_contained": false,
                   "props": {
-                    "variant": "tag",
                     "text": "Content Creation",
+                    "variant": "tag",
                     "background": "page"
                   }
                 },
                 {
+                  "name": "chip",
                   "key": "services-chip_3",
-                  "name": "chip",
+                  "is_contained": false,
                   "props": {
-                    "variant": "tag",
                     "text": "Paid Advertising",
+                    "variant": "tag",
                     "background": "page"
                   }
                 },
                 {
+                  "name": "chip",
                   "key": "services-chip_4",
-                  "name": "chip",
+                  "is_contained": false,
                   "props": {
-                    "variant": "tag",
                     "text": "Influencer Marketing",
+                    "variant": "tag",
                     "background": "page"
                   }
                 },
                 {
+                  "name": "chip",
                   "key": "services-chip_5",
-                  "name": "chip",
+                  "is_contained": false,
                   "props": {
-                    "variant": "tag",
                     "text": "Analytics & Reporting",
+                    "variant": "tag",
                     "background": "page"
                   }
                 },
                 {
+                  "name": "chip",
                   "key": "services-chip_6",
-                  "name": "chip",
+                  "is_contained": false,
                   "props": {
-                    "variant": "tag",
                     "text": "SEO Integration",
+                    "variant": "tag",
                     "background": "page"
                   }
                 },
                 {
+                  "name": "chip",
                   "key": "services-chip_7",
-                  "name": "chip",
+                  "is_contained": false,
                   "props": {
-                    "variant": "tag",
                     "text": "Website Design",
+                    "variant": "tag",
                     "background": "page"
                   }
                 },
                 {
+                  "name": "chip",
                   "key": "services-chip_8",
-                  "name": "chip",
+                  "is_contained": false,
                   "props": {
-                    "variant": "tag",
                     "text": "Video Photography",
+                    "variant": "tag",
                     "background": "page"
                   }
                 },
                 {
+                  "name": "chip",
                   "key": "services-chip_9",
-                  "name": "chip",
+                  "is_contained": false,
                   "props": {
-                    "variant": "tag",
                     "text": "Communication",
+                    "variant": "tag",
                     "background": "page"
                   }
                 },
                 {
-                  "key": "services-chip_10",
                   "name": "chip",
+                  "key": "services-chip_10",
+                  "is_contained": false,
                   "props": {
-                    "variant": "tag",
                     "text": "Community Management",
+                    "variant": "tag",
                     "background": "page"
                   }
                 }
@@ -398,10 +409,11 @@
                   "title": "Interview",
                   "description": "Jordy shares his learnings and best practices for sports social media, based on his 7+ years of experience.",
                   "image": {
-                    "src": "/images/blog1.webp",
+                    "src": "https://res.cloudinary.com/dourjocrv/image/upload/v1769416724/369-media-house/bsgqzcevs09jgjzkayla.png",
                     "alt": "Interview illustration",
                     "ratio": "square"
-                  }
+                  },
+                  "background": "page"
                 }
               },
               {
@@ -416,7 +428,8 @@
                     "src": "/images/blog2.webp",
                     "alt": "Content creation illustration",
                     "ratio": "square"
-                  }
+                  },
+                  "background": "page"
                 }
               },
               {
@@ -431,7 +444,8 @@
                     "src": "/images/blog3.webp",
                     "alt": "Analytics illustration",
                     "ratio": "square"
-                  }
+                  },
+                  "background": "page"
                 }
               }
             ]
@@ -503,7 +517,7 @@
                     "is_contained": false,
                     "grid_span": 1,
                     "props": {
-                      "source": "/images/contact.webp",
+                      "source": "https://res.cloudinary.com/dourjocrv/image/upload/v1769237320/369-media-house/ifkv1cdkwod6fr0whhfw.avif",
                       "alt": "Contact image",
                       "width": 500,
                       "height": 500,
@@ -564,28 +578,29 @@
                       "clearFormAfterSubmit": true,
                       "fields": [
                         {
-                          "key": "name",
                           "name": "input",
+                          "key": "name",
                           "props": {
                             "name": "name",
                             "label": "Full Name",
+                            "type": "text",
                             "placeholder": "John Doe",
                             "required": true
                           }
                         },
                         {
-                          "key": "email",
                           "name": "input",
+                          "key": "email",
                           "props": {
                             "name": "email",
-                            "type": "email",
                             "label": "Email",
+                            "type": "email",
                             "required": true
                           }
                         },
                         {
-                          "key": "phone-number",
                           "name": "input",
+                          "key": "phone-number",
                           "props": {
                             "name": "phone",
                             "label": "Phone number",
@@ -595,22 +610,24 @@
                           }
                         },
                         {
-                          "key": "service",
                           "name": "input",
+                          "key": "service",
                           "props": {
                             "name": "service",
                             "label": "Service",
+                            "type": "text",
                             "placeholder": "Strategy and Planning",
                             "required": true
                           }
                         },
                         {
-                          "key": "message",
                           "name": "textarea",
+                          "key": "message",
                           "props": {
                             "name": "message",
                             "label": "Message",
-                            "rows": 5
+                            "rows": 5,
+                            "required": false
                           }
                         }
                       ]
@@ -660,12 +677,12 @@
       }
     ],
     "status": "published",
-    "version": 8,
+    "version": 13,
     "createdAt": {
       "$date": "2026-01-15T03:44:41.865Z"
     },
     "updatedAt": {
-      "$date": "2026-01-16T09:41:41.737Z"
+      "$date": "2026-01-28T07:01:08.784Z"
     }
   },
   {

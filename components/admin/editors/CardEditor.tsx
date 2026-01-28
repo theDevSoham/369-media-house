@@ -29,6 +29,7 @@ type Props = {
         key: string;
         name: "card";
         grid_span: number;
+        row_span?: number;
         variant: "preview";
         props: PreviewProps;
       }
@@ -36,6 +37,7 @@ type Props = {
         key: string;
         name: "card";
         grid_span: number;
+        row_span?: number;
         variant: "testimonial";
         props: TestimonialProps;
       };
@@ -325,6 +327,18 @@ const CardEditor: React.FC<Props> = ({ component, path }) => {
           min={1}
           name={`${path}.grid_span`}
           defaultValue={component.grid_span}
+          className="w-full rounded border px-2 py-1 text-sm"
+        />
+      </div>
+
+      {/* Row span */}
+      <div>
+        <label className="block text-xs font-medium mb-1">Row span</label>
+        <input
+          type="number"
+          min={1}
+          name={`${path}.row_span`}
+          defaultValue={component.row_span ?? ""}
           className="w-full rounded border px-2 py-1 text-sm"
         />
       </div>

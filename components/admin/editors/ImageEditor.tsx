@@ -14,6 +14,7 @@ type ImageEditorProps = {
     name: "image";
     is_contained?: boolean;
     grid_span?: number;
+    row_span?: number;
     props: {
       source: string;
       alt: string;
@@ -28,7 +29,7 @@ type ImageEditorProps = {
 };
 
 export default function ImageEditor({ component, path }: ImageEditorProps) {
-  const { key, name, is_contained, grid_span, props } = component;
+  const { key, name, is_contained, grid_span, row_span, props } = component;
   const {
     source,
     alt,
@@ -76,9 +77,21 @@ export default function ImageEditor({ component, path }: ImageEditorProps) {
         <label className="text-xs font-medium">Grid span</label>
         <input
           type="number"
-          min={1}
+          min={0}
           name={`${path}.grid_span`}
-          defaultValue={grid_span ?? 1}
+          defaultValue={grid_span ?? ""}
+          className="w-full rounded-md border px-2 py-1 text-sm"
+        />
+      </div>
+
+      {/* Row span */}
+      <div>
+        <label className="text-xs font-medium">Row span</label>
+        <input
+          type="number"
+          min={0}
+          name={`${path}.row_span`}
+          defaultValue={row_span ?? ""}
           className="w-full rounded-md border px-2 py-1 text-sm"
         />
       </div>
