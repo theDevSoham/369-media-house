@@ -58,7 +58,7 @@ const Navbar: React.FC<NavBarProps> = ({ brandImage, brandText, navLinks }) => {
 
   return (
     <nav className="bg-[var(--color-bg-page)]">
-      <div className="mx-auto max-w-5xl px-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex md:h-40 h-18 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
